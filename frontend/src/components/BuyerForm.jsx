@@ -200,7 +200,7 @@ function BuyerForm() {
           </FormSection>
 
           <div className="flex justify-center">
-            <SubmitButton text="Find My Property" />
+            <SubmitButton text="Submit" />
           </div>
 
         </form>
