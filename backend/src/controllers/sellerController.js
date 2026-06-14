@@ -1,15 +1,60 @@
 const Seller = require("../models/Seller");
+const uploadToCloudinary = require("../utils/uploadToCloudinary");
 
 const createSeller = async (req, res) => {
   try {
-    const seller = await Seller.create(req.body);
+    const imageUrls = [];
+    let videoUrl = "";
+
+    // Upload Images
+
+    if (req.files?.images) {
+      for (const file of req.files.images) {
+        const result =
+          await uploadToCloudinary(
+            file.buffer,
+            "image"
+          );
+
+        imageUrls.push(
+          result.secure_url
+        );
+      }
+    }
+
+    // Upload Video
+
+    if (req.files?.video?.[0]) {
+      const result =
+        await uploadToCloudinary(
+          req.files.video[0].buffer,
+          "video"
+        );
+
+      videoUrl = result.secure_url;
+    }
+
+    const seller = await Seller.create({
+      ...req.body,
+      images: imageUrls,
+      video: videoUrl,
+    });
 
     res.status(201).json({
       success: true,
-      message: "Seller lead created successfully",
+      message:
+        "Seller lead created successfully",
       data: seller,
     });
   } catch (error) {
+    console.log(
+      "========== SELLER ERROR =========="
+    );
+
+    console.dir(error, {
+      depth: null,
+    });
+
     res.status(500).json({
       success: false,
       message: error.message,
@@ -17,21 +62,25 @@ const createSeller = async (req, res) => {
   }
 };
 
-
-const updateSellerPackage = async (req, res) => {
+const updateSellerPackage = async (
+  req,
+  res
+) => {
   try {
     const { id } = req.params;
-    const { packageSelected } = req.body;
+    const { packageSelected } =
+      req.body;
 
-    const seller = await Seller.findByIdAndUpdate(
-      id,
-      {
-        packageSelected,
-      },
-      {
-        new: true,
-      }
-    );
+    const seller =
+      await Seller.findByIdAndUpdate(
+        id,
+        {
+          packageSelected,
+        },
+        {
+          new: true,
+        }
+      );
 
     if (!seller) {
       return res.status(404).json({
@@ -42,7 +91,8 @@ const updateSellerPackage = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Package updated successfully",
+      message:
+        "Package updated successfully",
       data: seller,
     });
   } catch (error) {

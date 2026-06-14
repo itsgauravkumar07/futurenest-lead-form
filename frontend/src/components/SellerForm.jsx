@@ -10,6 +10,7 @@ import SubmitButton from "./form-components/SubmitButton";
 function SellerForm() {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     mobileNumber: "",
@@ -40,37 +41,114 @@ function SellerForm() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await API.post("/sellers", {
-        fullName: formData.fullName,
-        mobileNumber: formData.mobileNumber,
-        whatsappNumber: formData.whatsappNumber,
-        email: formData.email,
+  setLoading(true);
 
-        address: formData.address,
-        city: formData.city,
-        state: formData.state,
-        pinCode: formData.pinCode,
+  try {
+    const formDataToSend = new FormData();
 
-        propertyType: formData.propertyType,
-        propertyLocation: formData.propertyLocation,
-        expectedSellingPrice: formData.expectedSellingPrice,
-        additionalDetails: formData.additionalDetails,
-      });
+    formDataToSend.append(
+      "fullName",
+      formData.fullName
+    );
 
-      localStorage.setItem(
-        "sellerLeadId",
-        response.data.data._id
+    formDataToSend.append(
+      "mobileNumber",
+      formData.mobileNumber
+    );
+
+    formDataToSend.append(
+      "whatsappNumber",
+      formData.whatsappNumber
+    );
+
+    formDataToSend.append(
+      "email",
+      formData.email
+    );
+
+    formDataToSend.append(
+      "address",
+      formData.address
+    );
+
+    formDataToSend.append(
+      "city",
+      formData.city
+    );
+
+    formDataToSend.append(
+      "state",
+      formData.state
+    );
+
+    formDataToSend.append(
+      "pinCode",
+      formData.pinCode
+    );
+
+    formDataToSend.append(
+      "propertyType",
+      formData.propertyType
+    );
+
+    formDataToSend.append(
+      "propertyLocation",
+      formData.propertyLocation
+    );
+
+    formDataToSend.append(
+      "expectedSellingPrice",
+      formData.expectedSellingPrice
+    );
+
+    formDataToSend.append(
+      "additionalDetails",
+      formData.additionalDetails
+    );
+
+    formData.images.forEach((image) => {
+      formDataToSend.append(
+        "images",
+        image
       );
+    });
 
-      navigate("/packages/seller");
-    } catch (error) {
-      console.error(error);
-      alert("Failed to submit form");
+    if (formData.video) {
+      formDataToSend.append(
+        "video",
+        formData.video
+      );
     }
-  };
+
+    const response = await API.post(
+      "/sellers",
+      formDataToSend,
+      {
+        headers: {
+          "Content-Type":
+            "multipart/form-data",
+        },
+      }
+    );
+
+    localStorage.setItem(
+      "sellerLeadId",
+      response.data.data._id
+    );
+
+    setLoading(false);
+
+    navigate("/packages/seller");
+  } catch (error) {
+    console.error(error);
+
+    setLoading(false);
+
+    alert("Failed to submit form");
+  }
+};
 
   return (
     <div className="min-h-screen bg-slate-50 py-8 px-4">
@@ -242,22 +320,250 @@ function SellerForm() {
             />
           </FormSection>
 
-          {/* Future Upload Section */}
-
+          {/* Image and video Upload Section */}
           <FormSection
-            title="Property Photos & Video"
-            description="Coming soon"
+  title="Property Photos & Video"
+  description="Upload property photos and a video."
+>
+  <div className="space-y-6">
+
+    {/* Images Upload */}
+
+    <div>
+      <label className="block text-sm font-medium mb-2">
+        Property Images
+      </label>
+
+      <label
+        htmlFor="images"
+        className="
+          block
+          w-full
+          border-2
+          border-dashed
+          border-gray-300
+          rounded-xl
+          p-6
+          text-center
+          cursor-pointer
+          hover:border-green-500
+          hover:bg-green-50
+          transition
+        "
+      >
+        <div className="space-y-2">
+
+          <p className="font-medium text-gray-700">
+            📷 Upload Property Photos
+          </p>
+
+          <p className="text-sm text-gray-500">
+            JPG, PNG, WEBP supported
+          </p>
+
+          {formData.images.length > 0 && (
+            <p className="text-green-600 font-medium">
+              {formData.images.length} image(s) selected
+            </p>
+          )}
+
+        </div>
+      </label>
+
+      <input
+        id="images"
+        type="file"
+        multiple
+        accept="image/*"
+        className="hidden"
+        onChange={(e) =>
+          setFormData((prev) => ({
+            ...prev,
+            images: [
+              ...prev.images,
+              ...Array.from(e.target.files),
+            ],
+          }))
+        }
+      />
+    </div>
+
+    {/* Image Preview */}
+
+    {formData.images.length > 0 && (
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+        {formData.images.map((image, index) => (
+          <div
+            key={index}
+            className="relative"
           >
-            <div className="bg-slate-50 border border-dashed rounded-xl p-6 text-center">
-              <p className="text-gray-600">
-                Property photo and video upload
-                functionality will be available soon.
-              </p>
-            </div>
+
+            <img
+              src={URL.createObjectURL(image)}
+              alt={`Preview ${index + 1}`}
+              className="
+                h-28
+                w-full
+                object-cover
+                rounded-xl
+                border
+                border-gray-200
+              "
+            />
+
+            <button
+              type="button"
+              onClick={() =>
+                setFormData((prev) => ({
+                  ...prev,
+                  images: prev.images.filter(
+                    (_, i) => i !== index
+                  ),
+                }))
+              }
+              className="
+                absolute
+                top-2
+                right-2
+                w-7
+                h-7
+                rounded-full
+                bg-red-500
+                text-white
+                text-sm
+                hover:bg-red-600
+              "
+            >
+              ✕
+            </button>
+
+          </div>
+        ))}
+
+      </div>
+    )}
+
+    {/* Video Upload */}
+
+    <div>
+      <label className="block text-sm font-medium mb-2">
+        Property Video
+      </label>
+
+      <label
+        htmlFor="video"
+        className="
+          block
+          w-full
+          border-2
+          border-dashed
+          border-gray-300
+          rounded-xl
+          p-6
+          text-center
+          cursor-pointer
+          hover:border-green-500
+          hover:bg-green-50
+          transition
+        "
+      >
+        <div className="space-y-2">
+
+          <p className="font-medium text-gray-700">
+            🎥 Upload Property Video
+          </p>
+
+          <p className="text-sm text-gray-500">
+            MP4, MOV supported
+          </p>
+
+          {formData.video && (
+            <p className="text-green-600 font-medium break-all">
+              {formData.video.name}
+            </p>
+          )}
+
+        </div>
+      </label>
+
+      <input
+        id="video"
+        type="file"
+        accept="video/*"
+        className="hidden"
+        onChange={(e) => {
+  const file = e.target.files?.[0];
+
+  if (!file) return;
+
+  setFormData((prev) => ({
+    ...prev,
+    video: file,
+  }));
+}}
+      />
+    </div>
+
+    {/* Video Preview */}
+
+    {formData.video && (
+  <div className="space-y-3">
+
+    <video
+      controls
+      className="
+        w-full
+        max-h-80
+        rounded-xl
+        border
+        border-gray-200
+      "
+      src={URL.createObjectURL(
+        formData.video
+      )}
+    />
+
+    <div className="flex items-center justify-between">
+
+      <p className="text-sm text-green-600 break-all">
+        {formData.video.name}
+      </p>
+
+      <button
+        type="button"
+        onClick={() =>
+          setFormData((prev) => ({
+            ...prev,
+            video: null,
+          }))
+        }
+        className="
+          px-3
+          py-2
+          bg-red-500
+          text-white
+          text-sm
+          rounded-lg
+          hover:bg-red-600
+          transition
+        "
+      >
+        Remove
+      </button>
+
+    </div>
+
+  </div>
+)}
+  </div>
           </FormSection>
 
           <div className="flex justify-center">
-            <SubmitButton text="Continue" />
+            <SubmitButton 
+              text="Continue"
+              loading={loading}
+            />
           </div>
 
         </form>

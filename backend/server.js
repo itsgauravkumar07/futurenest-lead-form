@@ -7,6 +7,8 @@ const connectDB = require("./src/config/db");
 
 const app = express();
 
+const uploadRoutes = require("./src/routes/uploadRoutes");
+
 connectDB();
 
 app.use(cors());
@@ -16,6 +18,9 @@ app.use("/api/buyers", require("./src/routes/buyerRoutes"));
 app.use("/api/sellers", require("./src/routes/sellerRoutes"));
 app.use("/api/landlords", require("./src/routes/landlordRoutes"));
 app.use("/api/tenants", require("./src/routes/tenantRoutes"));
+
+//Upload routes
+app.use("/api", uploadRoutes);
 
 app.get("/", (req, res) => {
   res.send("Property Lead API Running...");

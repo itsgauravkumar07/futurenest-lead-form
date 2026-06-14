@@ -1,9 +1,13 @@
+import { Loader2 } from "lucide-react";
+
 function SubmitButton({
   text = "Submit",
+  loading = false,
 }) {
   return (
     <button
       type="submit"
+      disabled={loading}
       className="
         w-full
         md:w-auto
@@ -15,9 +19,21 @@ function SubmitButton({
         font-semibold
         hover:bg-green-600
         transition
+        disabled:opacity-70
+        disabled:cursor-not-allowed
       "
     >
-      {text}
+      {loading ? (
+        <span className="flex items-center justify-center gap-2">
+          <Loader2
+            size={18}
+            className="animate-spin"
+          />
+          Uploading Property...
+        </span>
+      ) : (
+        text
+      )}
     </button>
   );
 }
