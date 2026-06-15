@@ -6,6 +6,7 @@ import FormSection from "./form-components/FormSection";
 import InputField from "./form-components/InputFields";
 import PropertyTypeSelector from "./form-components/PropertyTypeSelector";
 import SubmitButton from "./form-components/SubmitButton";
+import BackButton from "./BackBtn"
 
 import { useTranslation } from "react-i18next";
 
@@ -67,14 +68,20 @@ function TenantForm() {
 
         {/* Header */}
 
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold">
-            {t("tenant.title")}
-          </h1>
-
-          <p className="text-gray-600 mt-2">
-            {t("tenant.subtitle")}
-          </p>
+         <div className="text-center mb-8 flex">
+          <div>
+            <BackButton />
+          </div>
+  
+          <div className=" w-full">
+            <h1 className="text-3xl md:text-4xl font-bold">
+              {t("tenant.title")}
+            </h1>
+  
+            <p className="text-gray-600 mt-2">
+              {t("tenant.subtitle")}
+            </p>
+          </div>
         </div>
 
         <form

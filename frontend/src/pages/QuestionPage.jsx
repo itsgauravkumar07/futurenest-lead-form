@@ -12,7 +12,8 @@ function QuestionPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 flex items-center py-6">
+    <div className="bg-slate-50 px-4 py-6">
+      <div className="max-w-4xl mx-auto min-h-[calc(100vh-112px)] flex items-center">
       <div className="max-w-4xl mx-auto w-full">
 
         {/* Heading */}
@@ -79,7 +80,9 @@ function QuestionPage() {
         </div>
 
       </div>
+      </div>
     </div>
+    
   );
 }
 

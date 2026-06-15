@@ -51,11 +51,11 @@ function LanguageSwitcher() {
         "
       >
         <option value="en">
-          🇺🇸 English
+          English
         </option>
 
         <option value="hi">
-          🇮🇳 हिन्दी
+          हिन्दी
         </option>
       </select>
     </div>

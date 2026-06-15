@@ -4,6 +4,7 @@ import PackageCard from "../components/PackageCard";
 import { packages } from "../data/packages";
 import API from "../services/api";
 import { useTranslation } from "react-i18next";
+import BackButton from '../components/BackBtn'
 
 function PackagePage() {
   const { role } = useParams();
@@ -84,32 +85,22 @@ function PackagePage() {
     <div className="min-h-screen bg-slate-50 py-10 px-4">
       <div className="max-w-6xl mx-auto">
 
-        {/* Back Button */}
+      {/* Header */}
 
-        <button
-          onClick={() => navigate(-1)}
-          className="
-            mb-8
-            text-green-600
-            font-medium
-            hover:text-green-700
-          "
-        >
-          ← {t("packages.back")}
-        </button>
-
-        {/* Header */}
-
-        <div className="text-center mb-12">
-
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900">
-            {t("packages.title")}
-          </h1>
-
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-            {t("packages.subtitle")}
-          </p>
-
+         <div className="text-center mb-8 flex">
+          <div>
+            <BackButton />
+          </div>
+  
+          <div className=" w-full">
+            <h1 className="text-3xl md:text-4xl font-bold text-brand-secondary">
+              {t("packages.title")}
+            </h1>
+  
+            <p className="text-brand-secondary mt-2">
+              {t("packages.subtitle")}
+            </p>
+          </div>
         </div>
 
         {/* Packages */}
@@ -150,11 +141,11 @@ function PackagePage() {
               shadow-sm
             "
           >
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold text-brand-secondar">
                {t("packages.needHelp")}
             </h2>
 
-            <p className="text-slate-600 mt-3">
+            <p className="text-brand-secondary mt-3">
              {t("packages.needHelpDesc")}
             </p>
 
@@ -167,8 +158,8 @@ function PackagePage() {
               }
               className="
                 mt-6
-                bg-green-500
-                hover:bg-green-600
+                bg-brand-primary
+                hover:bg-brand-primary-hover
                 text-white
                 px-8
                 py-3

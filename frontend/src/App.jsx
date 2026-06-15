@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import QuestionPage from "./pages/QuestionPage";
 import FormPage from "./pages/FormPage";
@@ -6,6 +7,7 @@ import PackagePage from "./pages/PackagePage";
 import SuccessPage from "./pages/SuccessPage";
 import PaymentPage from "./pages/PaymentPage";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -23,6 +25,8 @@ function App() {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/success" element={<SuccessPage />} />
       </Routes>
+
+      <Footer />
     </>
     
   );

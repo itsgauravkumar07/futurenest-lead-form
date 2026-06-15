@@ -22,6 +22,7 @@
 "common": {
 "submit": "Submit",
 "continue": "Continue",
+"back": "Back",
 "uploading": "Uploading Property...",
 "fullName": "Full Name",
 "mobileNumber": "Mobile Number",

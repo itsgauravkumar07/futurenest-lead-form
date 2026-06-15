@@ -8,6 +8,7 @@ import FormSection from "../components/form-components/FormSection";
 import InputField from "../components/form-components/InputFields";
 import PropertyTypeSelector from "../components/form-components/PropertyTypeSelector";
 import SubmitButton from "../components/form-components/SubmitButton";
+import BackButton from "../components/BackBtn";
 
 function BuyerForm() {
   const navigate = useNavigate();
@@ -57,9 +58,16 @@ function BuyerForm() {
     <div className="min-h-screen bg-slate-50 py-8 px-4">
       <div className="max-w-4xl mx-auto">
 
+      
         {/* Header */}
 
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 flex">
+
+        <div>
+          <BackButton />
+        </div>
+
+        <div className=" w-full">
           <h1 className="text-3xl md:text-4xl font-bold">
             {t("buyer.title")}
           </h1>
@@ -67,6 +75,9 @@ function BuyerForm() {
           <p className="text-gray-600 mt-2">
             {t("buyer.subtitle")}
           </p>
+        </div>
+          
+          
         </div>
 
         <form

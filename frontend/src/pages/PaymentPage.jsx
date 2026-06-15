@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import QR from "../assets/qr-code.png";
 import { useTranslation } from "react-i18next";
+import BackButton from '../components/BackBtn'
 
 function PaymentPage() {
   const location = useLocation();
@@ -51,20 +52,26 @@ const copyUPI = () => {
 
         {/* Header */}
 
-        <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold">
-            {t("payment.title")}
-          </h1>
-
-          <p className="text-slate-600 mt-3">
-            {t("payment.subtitle")}
-          </p>
+         <div className="text-center mb-8 flex">
+          <div>
+            <BackButton />
+          </div>
+  
+          <div className=" w-full">
+            <h1 className="text-3xl md:text-4xl font-bold">
+              {t("payment.title")}
+            </h1>
+  
+            <p className="text-gray-600 mt-2">
+              {t("payment.subtitle")}
+            </p>
+          </div>
         </div>
 
         {/* Package Summary */}
 
-        <div className="bg-white rounded-3xl border p-6 shadow-sm mb-6">
-          <p className="text-sm text-slate-500">
+        <div className="bg-white rounded-3xl border p-6 shadow-sm mb-6 border-gray-200">
+          <p className="text-sm text-slate-00">
             {t("payment.selectedPackage")}
           </p>
 
@@ -83,13 +90,13 @@ const copyUPI = () => {
 
           {/* QR */}
 
-          <div className="bg-white rounded-3xl border p-6 shadow-sm">
+          <div className="bg-white rounded-3xl border p-6 shadow-sm border-gray-200">
 
             <h3 className="text-xl font-semibold mb-4">
               {t("payment.scanPay")}
             </h3>
 
-            <div className="border rounded-2xl p-4 bg-slate-50">
+            <div className="border border-gray-400 rounded-2xl p-4 bg-slate-50">
               <img
                 src={QR}
                 alt="Payment QR"
@@ -105,13 +112,13 @@ const copyUPI = () => {
 
           {/* UPI Details */}
 
-          <div className="bg-white rounded-3xl border p-6 shadow-sm">
+          <div className="bg-white rounded-3xl border p-6 shadow-sm border-gray-200">
 
             <h3 className="text-xl font-semibold mb-4">
               {t("payment.upiPayment")}
             </h3>
 
-            <div className="bg-slate-50 border rounded-2xl p-4">
+            <div className="bg-slate-50 border rounded-2xl p-4 border-gray-400">
 
               <p className="text-sm text-slate-500">
                 {t("payment.upiId")}
@@ -165,7 +172,7 @@ const copyUPI = () => {
 
         {/* Verification Section */}
 
-        <div className="bg-white rounded-3xl border p-6 shadow-sm mt-6">
+        <div className="bg-white rounded-3xl border p-6 shadow-sm mt-6 border-gray-200">
 
           <h3 className="text-xl font-semibold text-center">
             {t("payment.verificationTitle")}
@@ -197,11 +204,11 @@ const copyUPI = () => {
               onClick={() => navigate("/success")}
               className="
                 flex-1
-                border
+                border border-gray-300
                 py-4
                 rounded-xl
                 font-semibold
-                hover:bg-slate-50
+                hover:bg-slate-100
                 transition
               "
             >

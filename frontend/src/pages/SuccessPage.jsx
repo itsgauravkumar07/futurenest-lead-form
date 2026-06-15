@@ -24,21 +24,21 @@ function SuccessPage() {
             href="https://wa.me/919999999999"
             target="_blank"
             rel="noreferrer"
-            className="block w-full bg-green-600 text-white py-3 rounded-lg"
+            className="block w-full bg-brand-primary hover:bg-brand-primary-hover text-white py-3 rounded-lg"
           >
             {t("success.whatsapp")}
           </a>
 
           <a
             href="tel:+919999999999"
-            className="block w-full bg-black text-white py-3 rounded-lg"
+            className="block w-full bg-brand-secondary hover:bg-brand-secondary-hover text-white py-3 rounded-lg"
           >
             {t("success.call")}
           </a>
 
           <Link
             to="/"
-            className="block w-full border py-3 rounded-lg"
+            className="block w-full border py-3 rounded-lg border-gray-300 hover:bg-slate-100"
           >
             {t("success.home")}
           </Link>

@@ -9,7 +9,7 @@ function FormPage() {
   const { role } = useParams();
 
   return (
-    <div className="min-h-screen bg-white py-10 px-4">
+    <div className="min-h-screen">
       {role === "buyer" && <BuyerForm />}
       {role === "seller" && <SellerForm />}
       {role === "landlord" && <LandLordForm />}
