@@ -1,9 +1,12 @@
 import { Loader2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function SubmitButton({
-  text = "Submit",
+  text = "common.submit",
   loading = false,
 }) {
+  const { t } = useTranslation();
+
   return (
     <button
       type="submit"
@@ -29,10 +32,10 @@ function SubmitButton({
             size={18}
             className="animate-spin"
           />
-          Uploading Property...
+          {t("common.uploading")}
         </span>
       ) : (
-        text
+        t(text)
       )}
     </button>
   );

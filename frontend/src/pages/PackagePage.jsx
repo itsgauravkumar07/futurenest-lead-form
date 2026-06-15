@@ -3,10 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import PackageCard from "../components/PackageCard";
 import { packages } from "../data/packages";
 import API from "../services/api";
+import { useTranslation } from "react-i18next";
 
 function PackagePage() {
   const { role } = useParams();
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const currentPackages = packages[role] || [];
 
@@ -92,7 +95,7 @@ function PackagePage() {
             hover:text-green-700
           "
         >
-          ← Back
+          ← {t("packages.back")}
         </button>
 
         {/* Header */}
@@ -100,12 +103,11 @@ function PackagePage() {
         <div className="text-center mb-12">
 
           <h1 className="text-3xl md:text-5xl font-bold text-slate-900">
-            Choose Your Package
+            {t("packages.title")}
           </h1>
 
           <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-            Select the package that best matches
-            your property requirements.
+            {t("packages.subtitle")}
           </p>
 
         </div>
@@ -149,12 +151,11 @@ function PackagePage() {
             "
           >
             <h2 className="text-2xl font-bold">
-              Need Help Choosing?
+               {t("packages.needHelp")}
             </h2>
 
             <p className="text-slate-600 mt-3">
-              Talk to our property consultant and
-              we'll help you select the right plan.
+             {t("packages.needHelpDesc")}
             </p>
 
             <button
@@ -176,7 +177,7 @@ function PackagePage() {
                 transition
               "
             >
-              Chat on WhatsApp
+              {t("packages.chatWhatsapp")}
             </button>
           </div>
         </div>

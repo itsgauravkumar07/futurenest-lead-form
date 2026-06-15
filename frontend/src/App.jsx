@@ -7,9 +7,14 @@ import SuccessPage from "./pages/SuccessPage";
 import PaymentPage from "./pages/PaymentPage";
 import Navbar from "./components/Navbar";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <>
+
+      <ScrollToTop />
+
       <Navbar />
       <Routes>
         <Route path="/" element={<QuestionPage />} />

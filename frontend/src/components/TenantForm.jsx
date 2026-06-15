@@ -7,8 +7,12 @@ import InputField from "./form-components/InputFields";
 import PropertyTypeSelector from "./form-components/PropertyTypeSelector";
 import SubmitButton from "./form-components/SubmitButton";
 
+import { useTranslation } from "react-i18next";
+
 function TenantForm() {
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -65,12 +69,11 @@ function TenantForm() {
 
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Find Your Next Rental Home
+            {t("tenant.title")}
           </h1>
 
           <p className="text-gray-600 mt-2">
-            Tell us your requirements and we'll
-            help you find the perfect rental property.
+            {t("tenant.subtitle")}
           </p>
         </div>
 
@@ -81,12 +84,12 @@ function TenantForm() {
           {/* Personal Information */}
 
           <FormSection
-            title="Personal Information"
-            description="Tell us how we can contact you."
+            title="tenant.personalInfo"
+            description="tenant.personalInfoDesc"
           >
             <div className="grid md:grid-cols-2 gap-4">
               <InputField
-                label="Full Name"
+                label="common.fullName"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
@@ -94,7 +97,7 @@ function TenantForm() {
               />
 
               <InputField
-                label="Mobile Number"
+                label="common.mobileNumber"
                 name="mobileNumber"
                 value={formData.mobileNumber}
                 onChange={handleChange}
@@ -102,7 +105,7 @@ function TenantForm() {
               />
 
               <InputField
-                label="WhatsApp Number"
+                label="common.whatsappNumber"
                 name="whatsappNumber"
                 value={formData.whatsappNumber}
                 onChange={handleChange}
@@ -110,7 +113,7 @@ function TenantForm() {
               />
 
               <InputField
-                label="Email Address"
+                label="common.email"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -122,14 +125,14 @@ function TenantForm() {
           {/* Address Information */}
 
           <FormSection
-            title="Current Address"
-            description="Tell us where you're currently staying."
+            title="tenant.currentAddress"
+            description="tenant.currentAddressDesc"
           >
             <div className="space-y-4">
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Address
+                  {t("common.address")}
                 </label>
 
                 <textarea
@@ -151,7 +154,7 @@ function TenantForm() {
               <div className="grid md:grid-cols-3 gap-4">
 
                 <InputField
-                  label="City"
+                  label="common.city"
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
@@ -159,7 +162,7 @@ function TenantForm() {
                 />
 
                 <InputField
-                  label="State"
+                  label="common.state"
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
@@ -167,7 +170,7 @@ function TenantForm() {
                 />
 
                 <InputField
-                  label="Pincode"
+                  label="common.pinCode"
                   name="pinCode"
                   value={formData.pinCode}
                   onChange={handleChange}
@@ -182,8 +185,8 @@ function TenantForm() {
           {/* Rental Requirements */}
 
           <FormSection
-            title="Rental Requirements"
-            description="Tell us what kind of property you're looking for."
+            title="tenant.requirements"
+            description="tenant.requirementsDesc"
           >
             <div className="space-y-4">
 
@@ -201,7 +204,7 @@ function TenantForm() {
               <div className="grid md:grid-cols-2 gap-4">
 
                 <InputField
-                  label="Preferred Location"
+                  label="tenant.preferredLocation"
                   name="preferredLocation"
                   value={formData.preferredLocation}
                   onChange={handleChange}
@@ -209,7 +212,7 @@ function TenantForm() {
                 />
 
                 <InputField
-                  label="Monthly Budget"
+                  label="tenant.monthlyBudget"
                   type="number"
                   name="monthlyBudget"
                   value={formData.monthlyBudget}
@@ -221,7 +224,7 @@ function TenantForm() {
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Move In Date
+                  {t("tenant.moveInDate")}
                 </label>
 
                 <input
@@ -250,15 +253,15 @@ function TenantForm() {
           {/* Additional Requirements */}
 
           <FormSection
-            title="Additional Requirements"
-            description="Share any special requirements."
+            title="tenant.additionalRequirements"
+            description="tenant.additionalRequirementsDesc"
           >
             <textarea
               name="additionalRequirements"
               value={formData.additionalRequirements}
               onChange={handleChange}
               rows="5"
-              placeholder="Furnished, Parking, Near Office, Family Friendly, Pet Friendly..."
+              placeholder={t("tenant.additionalRequirementsPlaceholder")}
               className="
                 w-full
                 border
@@ -283,14 +286,14 @@ function TenantForm() {
               text-sm
               font-medium
             ">
-              House Hunting Service
+              {t("tenant.service")}
             </span>
           </div>
 
           {/* Submit Button */}
 
           <div className="flex justify-center">
-            <SubmitButton text="Continue" />
+            <SubmitButton text="common.continue" />
           </div>
 
         </form>

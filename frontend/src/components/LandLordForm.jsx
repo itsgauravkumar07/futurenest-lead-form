@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
+import { useTranslation } from "react-i18next";
+
 import FormSection from "./form-components/FormSection";
 import InputField from "./form-components/InputFields";
 import PropertyTypeSelector from "./form-components/PropertyTypeSelector";
@@ -9,6 +11,7 @@ import SubmitButton from "./form-components/SubmitButton";
 
 function LandLordForm() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [loading, setLoading] =
   useState(false);
@@ -166,12 +169,11 @@ function LandLordForm() {
 
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Find Verified Tenants
+            {t("landlord.title")}
           </h1>
 
           <p className="text-gray-600 mt-2">
-            Share your property details and we'll
-            connect you with suitable tenants.
+            {t("landlord.subtitle")}
           </p>
         </div>
 
@@ -182,12 +184,12 @@ function LandLordForm() {
           {/* Personal Information */}
 
           <FormSection
-            title="Personal Information"
-            description="Tell us how we can contact you."
+            title="landlord.personalInfo"
+            description="landlord.personalInfoDesc"
           >
             <div className="grid md:grid-cols-2 gap-4">
               <InputField
-                label="Full Name"
+                label="common.fullName"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
@@ -195,7 +197,7 @@ function LandLordForm() {
               />
 
               <InputField
-                label="Mobile Number"
+                label="common.mobileNumber"
                 name="mobileNumber"
                 value={formData.mobileNumber}
                 onChange={handleChange}
@@ -203,7 +205,7 @@ function LandLordForm() {
               />
 
               <InputField
-                label="WhatsApp Number"
+                label="common.whatsappNumber"
                 name="whatsappNumber"
                 value={formData.whatsappNumber}
                 onChange={handleChange}
@@ -211,7 +213,7 @@ function LandLordForm() {
               />
 
               <InputField
-                label="Email Address"
+                label="common.email"
                 name="email"
                 type="email"
                 value={formData.email}
@@ -223,14 +225,14 @@ function LandLordForm() {
           {/* Address Information */}
 
           <FormSection
-            title="Address Information"
-            description="Tell us your current address."
+            title="landlord.addressInfo"
+            description="landlord.addressInfoDesc"
           >
             <div className="space-y-4">
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Full Address
+                  {t("common.address")}
                 </label>
 
                 <textarea
@@ -245,7 +247,7 @@ function LandLordForm() {
 
               <div className="grid md:grid-cols-3 gap-4">
                 <InputField
-                  label="City"
+                  label="common.city"
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
@@ -253,7 +255,7 @@ function LandLordForm() {
                 />
 
                 <InputField
-                  label="State"
+                  label="common.state"
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
@@ -261,7 +263,7 @@ function LandLordForm() {
                 />
 
                 <InputField
-                  label="Pincode"
+                  label="common.pinCode"
                   name="pinCode"
                   value={formData.pinCode}
                   onChange={handleChange}
@@ -274,8 +276,8 @@ function LandLordForm() {
           {/* Property Details */}
 
           <FormSection
-            title="Rental Property Details"
-            description="Tell us about the property you want to rent."
+            title="landlord.propertyDetails"
+            description="landlord.propertyDetailsDesc"
           >
             <div className="space-y-4">
 
@@ -287,7 +289,7 @@ function LandLordForm() {
               <div className="grid md:grid-cols-2 gap-4">
 
                 <InputField
-                  label="Property Location"
+                  label="landlord.propertyLocation"
                   name="propertyLocation"
                   value={formData.propertyLocation}
                   onChange={handleChange}
@@ -295,7 +297,7 @@ function LandLordForm() {
                 />
 
                 <InputField
-                  label="Monthly Rent"
+                  label="landlord.monthlyRent"
                   name="monthlyRent"
                   type="number"
                   value={formData.monthlyRent}
@@ -307,7 +309,7 @@ function LandLordForm() {
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Available From
+                  {t("landlord.availableFrom")}
                 </label>
 
                 <input
@@ -336,15 +338,15 @@ function LandLordForm() {
           {/* Additional Details */}
 
           <FormSection
-            title="Additional Details"
-            description="Share additional property details."
+            title="landlord.additionalDetails"
+            description="landlord.additionalDetailsDesc"
           >
             <textarea
               name="additionalDetails"
               value={formData.additionalDetails}
               onChange={handleChange}
               rows="5"
-              placeholder="2BHK, Furnished, Parking Available, Family Preferred..."
+              placeholder={t("landlord.additionalDetailsPlaceholder")}
               className="
                 w-full
                 border
@@ -357,8 +359,8 @@ function LandLordForm() {
 
           {/* Image and video Upload Section */}
           <FormSection
-  title="Property Photos & Video"
-  description="Upload property photos and a video."
+  title="landlord.mediaTitle"
+  description="landlord.mediaDesc"
 >
   <div className="space-y-6">
 
@@ -366,7 +368,7 @@ function LandLordForm() {
 
     <div>
       <label className="block text-sm font-medium mb-2">
-        Property Images
+        {t("landlord.propertyImages")}
       </label>
 
       <label
@@ -389,16 +391,16 @@ function LandLordForm() {
         <div className="space-y-2">
 
           <p className="font-medium text-gray-700">
-            📷 Upload Property Photos
+            {t("landlord.uploadImages")}
           </p>
 
           <p className="text-sm text-gray-500">
-            JPG, PNG, WEBP supported
+            {t("landlord.imageFormats")}
           </p>
 
           {formData.images.length > 0 && (
             <p className="text-green-600 font-medium">
-              {formData.images.length} image(s) selected
+              {formData.images.length} {t("landlord.imagesSelected")}
             </p>
           )}
 
@@ -483,7 +485,7 @@ function LandLordForm() {
 
     <div>
       <label className="block text-sm font-medium mb-2">
-        Property Video
+        {t("landlord.propertyVideo")}
       </label>
 
       <label
@@ -506,11 +508,11 @@ function LandLordForm() {
         <div className="space-y-2">
 
           <p className="font-medium text-gray-700">
-            🎥 Upload Property Video
+            {t("landlord.uploadVideo")}
           </p>
 
           <p className="text-sm text-gray-500">
-            MP4, MOV supported
+            {t("landlord.videoFormats")}
           </p>
 
           {formData.video && (
@@ -584,7 +586,7 @@ function LandLordForm() {
           transition
         "
       >
-        Remove
+        {t("landlord.remove")}
       </button>
 
     </div>
@@ -597,7 +599,7 @@ function LandLordForm() {
 
           <div className="flex justify-center">
             <SubmitButton 
-            text="Continue"
+            text="common.continue"
             loading={loading} />
           </div>
 

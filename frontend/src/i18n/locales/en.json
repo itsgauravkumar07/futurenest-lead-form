@@ -1,0 +1,251 @@
+{
+"continue": "Continue",
+"fullName": "Full Name",
+"mobileNumber": "Mobile Number",
+"email": "Email Address",
+
+"questionTitle": "What Are You Looking For?",
+"questionSubtitle": "Select your primary goal to help us tailor the perfect real estate experience for you.",
+
+"buyProperty": "Buy Property",
+"buyPropertyDesc": "Browse exclusive listings and find your dream home or investment.",
+
+"sellProperty": "Sell Property",
+"sellPropertyDesc": "Get a free valuation and list your property to reach qualified buyers.",
+
+"rentOutProperty": "Rent Out Property",
+"rentOutPropertyDesc": "Find reliable tenants and manage your rental portfolio efficiently.",
+
+"findRentalProperty": "Find Rental Property",
+"findRentalPropertyDesc": "Discover the perfect rental home in your desired neighborhood.",
+
+"common": {
+"submit": "Submit",
+"continue": "Continue",
+"uploading": "Uploading Property...",
+"fullName": "Full Name",
+"mobileNumber": "Mobile Number",
+"whatsappNumber": "WhatsApp Number",
+"email": "Email Address",
+"city": "City",
+"state": "State",
+"pinCode": "Pincode",
+"address": "Address",
+"propertyType": "Property Type"
+},
+
+"propertyTypes": {
+"Flat": "Flat",
+"House": "House",
+"Villa": "Villa",
+"Plot/Land": "Plot/Land"
+},
+
+  "buyer": {
+    "title": "Find Your Dream Property",
+    "subtitle": "Tell us your requirements and our team will help you find the perfect property.",
+
+    "personalInfo": "Personal Information",
+    "personalInfoDesc": "Tell us how we can contact you.",
+
+    "addressInfo": "Address Information",
+    "addressInfoDesc": "Tell us your current address.",
+
+    "propertyRequirements": "Property Requirements",
+    "propertyRequirementsDesc": "Tell us what you're looking for.",
+
+    "budget": "Budget",
+    "preferredLocation": "Preferred Location",
+
+    "additionalRequirements": "Additional Requirements",
+    "additionalRequirementsDesc": "Share any special requirements.",
+    "additionalRequirementsPlaceholder": "Near school, parking, gated society..."
+  },
+
+"seller": {
+  "title": "Sell Your Property Faster",
+  "subtitle": "Share your property details and connect with serious buyers quickly.",
+
+  "personalInfo": "Personal Information",
+  "personalInfoDesc": "Tell us how we can contact you.",
+
+  "addressInfo": "Address Information",
+  "addressInfoDesc": "Tell us your current address.",
+
+  "propertyDetails": "Property Details",
+  "propertyDetailsDesc": "Tell us about the property you want to sell.",
+
+  "propertyLocation": "Property Location",
+  "expectedSellingPrice": "Expected Selling Price",
+
+  "additionalDetails": "Additional Details",
+  "additionalDetailsDesc": "Provide more information about your property.",
+  "additionalDetailsPlaceholder": "3BHK, Parking, Furnished, Corner Property, Near Market...",
+
+  "mediaTitle": "Property Photos & Video",
+  "mediaDesc": "Upload property photos and a video.",
+
+  "propertyImages": "Property Images",
+  "uploadImages": "📷 Upload Property Photos",
+  "imageFormats": "JPG, PNG, WEBP supported",
+  "imagesSelected": "image(s) selected",
+
+  "propertyVideo": "Property Video",
+  "uploadVideo": "🎥 Upload Property Video",
+  "videoFormats": "MP4, MOV supported",
+
+  "remove": "Remove"
+},
+
+"landlord": {
+  "title": "Find Verified Tenants",
+  "subtitle": "Share your property details and we'll connect you with suitable tenants.",
+
+  "personalInfo": "Personal Information",
+  "personalInfoDesc": "Tell us how we can contact you.",
+
+  "addressInfo": "Address Information",
+  "addressInfoDesc": "Tell us your current address.",
+
+  "propertyDetails": "Rental Property Details",
+  "propertyDetailsDesc": "Tell us about the property you want to rent.",
+
+  "propertyLocation": "Property Location",
+  "monthlyRent": "Monthly Rent",
+  "availableFrom": "Available From",
+
+  "additionalDetails": "Additional Details",
+  "additionalDetailsDesc": "Share additional property details.",
+  "additionalDetailsPlaceholder": "2BHK, Furnished, Parking Available, Family Preferred...",
+
+  "mediaTitle": "Property Photos & Video",
+  "mediaDesc": "Upload property photos and a video.",
+
+  "propertyImages": "Property Images",
+  "uploadImages": "📷 Upload Property Photos",
+  "imageFormats": "JPG, PNG, WEBP supported",
+  "imagesSelected": "image(s) selected",
+
+  "propertyVideo": "Property Video",
+  "uploadVideo": "🎥 Upload Property Video",
+  "videoFormats": "MP4, MOV supported",
+
+  "remove": "Remove",
+
+  "service": "Tenant Finder Service"
+},
+
+"tenant": {
+  "title": "Find Your Next Rental Home",
+  "subtitle": "Tell us your requirements and we'll help you find the perfect rental property.",
+
+  "personalInfo": "Personal Information",
+  "personalInfoDesc": "Tell us how we can contact you.",
+
+  "currentAddress": "Current Address",
+  "currentAddressDesc": "Tell us where you're currently staying.",
+
+  "requirements": "Rental Requirements",
+  "requirementsDesc": "Tell us what kind of property you're looking for.",
+
+  "preferredLocation": "Preferred Location",
+  "monthlyBudget": "Monthly Budget",
+  "moveInDate": "Move In Date",
+
+  "additionalRequirements": "Additional Requirements",
+  "additionalRequirementsDesc": "Share any special requirements.",
+  "additionalRequirementsPlaceholder": "Furnished, Parking, Near Office, Family Friendly, Pet Friendly...",
+
+  "service": "House Hunting Service"
+},
+
+
+"packages": {
+  "back": "Back",
+
+  "title": "Choose Your Package",
+  "subtitle": "Select the package that best matches your property requirements.",
+
+  "needHelp": "Need Help Choosing?",
+  "needHelpDesc": "Talk to our property consultant and we'll help you select the right plan.",
+
+  "chatWhatsapp": "Chat on WhatsApp",
+
+  "leadNotFound": "Lead not found",
+  "invalidRole": "Invalid role",
+  "updateFailed": "Failed to update package",
+
+  "selectPlan": "Select Plan",
+  "contactUs": "Contact Us",
+  "proceedToPayment": "Proceed To Payment",
+
+  "seller100Leads": "100 Buyer Leads",
+  "seller300Leads": "300 Buyer Leads",
+  "sellOnCommission": "Sell On Commission",
+
+  "tenantFinderService": "Tenant Finder Service",
+  "houseHuntingService": "House Hunting Service",
+
+  "upTo100Leads": "Up to 100 buyer leads",
+  "upTo300Leads": "Up to 300 buyer leads",
+  "directBuyerContact": "Direct buyer contact details",
+  "fasterExposure": "Faster property exposure",
+  "maximumVisibility": "Maximum property visibility",
+
+  "noUpfrontPayment": "No upfront payment",
+  "weMarketProperty": "We market your property",
+  "payAfterSale": "Pay only after successful sale",
+
+  "oneTimeFee": "One Time Fee",
+  "validUntilTenantFound": "Valid Until Tenant Found",
+  "tenantVerification": "Tenant Verification Support",
+
+  "personalizedSearch": "Personalized Property Search",
+  "rentalAssistance": "Rental Property Assistance",
+  "moneyBack": "Money Back Within 30 Days*",
+
+  "mostPopular": "Most Popular"
+},
+
+"payment": {
+  "title": "Complete Your Payment",
+  "subtitle": "Secure your package and get started with FutureNest services.",
+
+  "selectedPackage": "Selected Package",
+
+  "scanPay": "Scan & Pay",
+  "scanQrDesc": "Scan the QR code using any UPI app.",
+
+  "upiPayment": "UPI Payment",
+  "upiId": "UPI ID",
+  "copy": "Copy",
+  "upiCopied": "UPI ID copied",
+
+  "paymentProcess": "Payment Process",
+
+  "step1": "Scan QR or pay via UPI ID",
+  "step2": "Complete payment",
+  "step3": "Take payment screenshot",
+  "step4": "Send screenshot on WhatsApp",
+  "step5": "Our team verifies payment",
+
+  "verificationTitle": "Payment Verification",
+  "verificationDesc": "After completing the payment, send us the screenshot on WhatsApp for manual verification.",
+
+  "sendScreenshot": "Send Screenshot on WhatsApp",
+  "alreadySent": "I've Already Sent It",
+
+  "whatsappMessage": "Hello FutureNest Team,\n\nI have completed the payment.\n\nPackage:",
+  "amount": "Amount",
+  "verificationLine": "I am attaching the payment screenshot for verification."
+},
+
+"success": {
+  "title": "Thank You!",
+  "description": "Your requirement has been submitted successfully. Our team will review your details and contact you shortly.",
+
+  "whatsapp": "Contact on WhatsApp",
+  "call": "Call Us",
+  "home": "Back to Home"
+}
+}

@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 function PackageCard({
   title,
   price,
@@ -6,6 +8,8 @@ function PackageCard({
   popular,
   onClick,
 }) {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`bg-white rounded-xl shadow p-6 ${
@@ -14,12 +18,12 @@ function PackageCard({
     >
       {popular && (
         <span className="bg-black text-white px-3 py-1 rounded text-sm">
-          Most Popular
+          {t("packages.mostPopular")}
         </span>
       )}
 
       <h2 className="text-xl font-bold mt-4">
-        {title}
+        {t(title)}
       </h2>
 
       <div className="text-3xl font-bold mt-4">
@@ -29,7 +33,7 @@ function PackageCard({
       <ul className="mt-4 space-y-2 text-gray-600">
         {features.map((feature, index) => (
           <li key={index}>
-            ✓ {feature}
+            ✓ {t(feature)}
           </li>
         ))}
       </ul>
@@ -37,12 +41,12 @@ function PackageCard({
       <button
         onClick={onClick}
         className={`mt-6 w-full py-3 rounded-lg text-white ${
-          buttonText === "Contact Us"
+          buttonText === "packages.contactUs"
             ? "bg-green-600"
             : "bg-black"
         }`}
       >
-        {buttonText}
+        {t(buttonText)}
       </button>
     </div>
   );

@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 function InputField({
   label,
   name,
@@ -7,10 +9,12 @@ function InputField({
   required = false,
   placeholder = "",
 }) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-2">
-        {label}
+        {t(label)}
       </label>
 
       <input
@@ -19,7 +23,7 @@ function InputField({
         value={value}
         onChange={onChange}
         required={required}
-        placeholder={placeholder}
+        placeholder={placeholder ? t(placeholder) : ""}
         className="
           w-full
           border

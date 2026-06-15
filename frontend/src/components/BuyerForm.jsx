@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import API from "../services/api";
 
 import FormSection from "../components/form-components/FormSection";
@@ -9,6 +11,7 @@ import SubmitButton from "../components/form-components/SubmitButton";
 
 function BuyerForm() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -54,14 +57,15 @@ function BuyerForm() {
     <div className="min-h-screen bg-slate-50 py-8 px-4">
       <div className="max-w-4xl mx-auto">
 
+        {/* Header */}
+
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Find Your Dream Property
+            {t("buyer.title")}
           </h1>
 
           <p className="text-gray-600 mt-2">
-            Tell us your requirements and our team
-            will help you find the perfect property.
+            {t("buyer.subtitle")}
           </p>
         </div>
 
@@ -69,13 +73,17 @@ function BuyerForm() {
           onSubmit={handleSubmit}
           className="space-y-6"
         >
+
+          {/* Personal Information */}
+
           <FormSection
-            title="Personal Information"
-            description="Tell us how we can contact you."
+            title="buyer.personalInfo"
+            description="buyer.personalInfoDesc"
           >
             <div className="grid md:grid-cols-2 gap-4">
+
               <InputField
-                label="Full Name"
+                label="common.fullName"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
@@ -83,7 +91,7 @@ function BuyerForm() {
               />
 
               <InputField
-                label="Mobile Number"
+                label="common.mobileNumber"
                 name="mobileNumber"
                 value={formData.mobileNumber}
                 onChange={handleChange}
@@ -91,7 +99,7 @@ function BuyerForm() {
               />
 
               <InputField
-                label="WhatsApp Number"
+                label="common.whatsappNumber"
                 name="whatsappNumber"
                 value={formData.whatsappNumber}
                 onChange={handleChange}
@@ -99,24 +107,27 @@ function BuyerForm() {
               />
 
               <InputField
-                label="Email Address"
+                label="common.email"
                 name="email"
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
               />
+
             </div>
           </FormSection>
 
+          {/* Address Information */}
+
           <FormSection
-            title="Address Information"
-            description="Tell us your current address."
+            title="buyer.addressInfo"
+            description="buyer.addressInfoDesc"
           >
             <div className="space-y-4">
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Full Address
+                  {t("common.address")}
                 </label>
 
                 <textarea
@@ -129,8 +140,9 @@ function BuyerForm() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-4">
+
                 <InputField
-                  label="City"
+                  label="common.city"
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
@@ -138,7 +150,7 @@ function BuyerForm() {
                 />
 
                 <InputField
-                  label="State"
+                  label="common.state"
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
@@ -146,19 +158,23 @@ function BuyerForm() {
                 />
 
                 <InputField
-                  label="Pincode"
+                  label="common.pinCode"
                   name="pinCode"
                   value={formData.pinCode}
                   onChange={handleChange}
                   required
                 />
+
               </div>
+
             </div>
           </FormSection>
 
+          {/* Property Requirements */}
+
           <FormSection
-            title="Property Requirements"
-            description="Tell us what you're looking for."
+            title="buyer.propertyRequirements"
+            description="buyer.propertyRequirementsDesc"
           >
             <div className="space-y-4">
 
@@ -168,42 +184,48 @@ function BuyerForm() {
               />
 
               <div className="grid md:grid-cols-2 gap-4">
+
                 <InputField
-                  label="Budget"
+                  label="buyer.budget"
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
                 />
 
                 <InputField
-                  label="Preferred Location"
+                  label="buyer.preferredLocation"
                   name="preferredLocation"
                   value={formData.preferredLocation}
                   onChange={handleChange}
                 />
+
               </div>
+
             </div>
           </FormSection>
 
+          {/* Additional Requirements */}
+
           <FormSection
-            title="Additional Requirements"
-            description="Share any special requirements."
+            title="buyer.additionalRequirements"
+            description="buyer.additionalRequirementsDesc"
           >
             <textarea
               name="additionalRequirements"
               value={formData.additionalRequirements}
               onChange={handleChange}
               rows="5"
-              placeholder="Near school, parking, gated society..."
+              placeholder={t("buyer.additionalRequirementsPlaceholder")}
               className="w-full border border-gray-300 rounded-xl p-3"
             />
           </FormSection>
 
           <div className="flex justify-center">
-            <SubmitButton text="Submit" />
+            <SubmitButton text="common.submit" />
           </div>
 
         </form>
+
       </div>
     </div>
   );

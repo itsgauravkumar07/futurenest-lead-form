@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const propertyTypes = [
   "Flat",
   "House",
@@ -9,10 +11,12 @@ function PropertyTypeSelector({
   value,
   onChange,
 }) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-3">
-        Property Type
+        {t("common.propertyType")}
       </label>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -42,7 +46,7 @@ function PropertyTypeSelector({
               }
             `}
           >
-            {type}
+            {t(`propertyTypes.${type}`)}
           </button>
         ))}
       </div>

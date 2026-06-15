@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { questionOptions } from "../data/questionOptions";
 
 function QuestionPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSelect = (role) => {
     navigate(`/form/${role}`);
@@ -13,18 +16,19 @@ function QuestionPage() {
       <div className="max-w-4xl mx-auto w-full">
 
         {/* Heading */}
+
         <div className="text-center mb-6">
           <h1 className="text-2xl md:text-4xl font-bold text-slate-900">
-            What Are You Looking For?
+            {t("questionTitle")}
           </h1>
 
           <p className="text-slate-600 text-sm md:text-base mt-2 max-w-xl mx-auto">
-            Select your primary goal to help us tailor the
-            perfect real estate experience for you.
+            {t("questionSubtitle")}
           </p>
         </div>
 
         {/* Cards */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
 
           {questionOptions.map((option) => {
@@ -59,11 +63,11 @@ function QuestionPage() {
 
                   <div>
                     <h2 className="text-lg md:text-xl font-bold text-slate-900 mb-1">
-                      {option.title}
+                      {t(option.titleKey)}
                     </h2>
 
                     <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
-                      {option.description}
+                      {t(option.descriptionKey)}
                     </p>
                   </div>
 
@@ -73,6 +77,7 @@ function QuestionPage() {
           })}
 
         </div>
+
       </div>
     </div>
   );

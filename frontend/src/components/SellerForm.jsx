@@ -7,8 +7,12 @@ import InputField from "./form-components/InputFields";
 import PropertyTypeSelector from "./form-components/PropertyTypeSelector";
 import SubmitButton from "./form-components/SubmitButton";
 
+import { useTranslation } from "react-i18next";
+
 function SellerForm() {
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -156,12 +160,11 @@ function SellerForm() {
 
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Sell Your Property Faster
+            {t("seller.title")}
           </h1>
 
           <p className="text-gray-600 mt-2">
-            Share your property details and connect
-            with serious buyers quickly.
+            {t("seller.subtitle")}
           </p>
         </div>
 
@@ -172,12 +175,12 @@ function SellerForm() {
           {/* Personal Information */}
 
           <FormSection
-            title="Personal Information"
-            description="Tell us how we can contact you."
+            title="seller.personalInfo"
+            description="seller.personalInfoDesc"
           >
             <div className="grid md:grid-cols-2 gap-4">
               <InputField
-                label="Full Name"
+                label="common.fullName"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
@@ -185,7 +188,7 @@ function SellerForm() {
               />
 
               <InputField
-                label="Mobile Number"
+                label="common.mobileNumber"
                 name="mobileNumber"
                 value={formData.mobileNumber}
                 onChange={handleChange}
@@ -193,7 +196,7 @@ function SellerForm() {
               />
 
               <InputField
-                label="WhatsApp Number"
+                label="common.whatsappNumber"
                 name="whatsappNumber"
                 value={formData.whatsappNumber}
                 onChange={handleChange}
@@ -201,7 +204,7 @@ function SellerForm() {
               />
 
               <InputField
-                label="Email Address"
+                label="common.email"
                 name="email"
                 type="email"
                 value={formData.email}
@@ -213,14 +216,14 @@ function SellerForm() {
           {/* Address Information */}
 
           <FormSection
-            title="Address Information"
-            description="Tell us your current address."
+            title="seller.addressInfo"
+            description="seller.addressInfoDesc"
           >
             <div className="space-y-4">
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Full Address
+                  {t("common.address")}
                 </label>
 
                 <textarea
@@ -235,7 +238,7 @@ function SellerForm() {
 
               <div className="grid md:grid-cols-3 gap-4">
                 <InputField
-                  label="City"
+                  label="common.city"
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
@@ -243,7 +246,7 @@ function SellerForm() {
                 />
 
                 <InputField
-                  label="State"
+                  label="common.state"
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
@@ -251,7 +254,7 @@ function SellerForm() {
                 />
 
                 <InputField
-                  label="Pincode"
+                  label="common.pinCode"
                   name="pinCode"
                   value={formData.pinCode}
                   onChange={handleChange}
@@ -264,8 +267,8 @@ function SellerForm() {
           {/* Property Details */}
 
           <FormSection
-            title="Property Details"
-            description="Tell us about the property you want to sell."
+            title="seller.propertyDetails"
+            description="seller.propertyDetailsDesc"
           >
             <div className="space-y-4">
 
@@ -277,7 +280,7 @@ function SellerForm() {
               <div className="grid md:grid-cols-2 gap-4">
 
                 <InputField
-                  label="Property Location"
+                  label="seller.propertyLocation"
                   name="propertyLocation"
                   value={formData.propertyLocation}
                   onChange={handleChange}
@@ -285,7 +288,7 @@ function SellerForm() {
                 />
 
                 <InputField
-                  label="Expected Selling Price"
+                  label="seller.expectedSellingPrice"
                   name="expectedSellingPrice"
                   type="number"
                   value={formData.expectedSellingPrice}
@@ -301,15 +304,15 @@ function SellerForm() {
           {/* Additional Details */}
 
           <FormSection
-            title="Additional Details"
-            description="Provide more information about your property."
+            title="seller.additionalDetails"
+            description="seller.additionalDetailsDesc"
           >
             <textarea
               name="additionalDetails"
               value={formData.additionalDetails}
               onChange={handleChange}
               rows="5"
-              placeholder="3BHK, Parking, Furnished, Corner Property, Near Market..."
+              placeholder={t("seller.additionalDetailsPlaceholder")}
               className="
                 w-full
                 border
@@ -322,8 +325,8 @@ function SellerForm() {
 
           {/* Image and video Upload Section */}
           <FormSection
-  title="Property Photos & Video"
-  description="Upload property photos and a video."
+  title="seller.mediaTitle"
+  description="seller.mediaDesc"
 >
   <div className="space-y-6">
 
@@ -331,7 +334,7 @@ function SellerForm() {
 
     <div>
       <label className="block text-sm font-medium mb-2">
-        Property Images
+        {t("seller.propertyImages")}
       </label>
 
       <label
@@ -354,16 +357,16 @@ function SellerForm() {
         <div className="space-y-2">
 
           <p className="font-medium text-gray-700">
-            📷 Upload Property Photos
+            {t("seller.uploadImages")}
           </p>
 
           <p className="text-sm text-gray-500">
-            JPG, PNG, WEBP supported
+            {t("seller.imageFormats")}
           </p>
 
           {formData.images.length > 0 && (
             <p className="text-green-600 font-medium">
-              {formData.images.length} image(s) selected
+              {formData.images.length} {t("seller.imagesSelected")}
             </p>
           )}
 
@@ -448,7 +451,7 @@ function SellerForm() {
 
     <div>
       <label className="block text-sm font-medium mb-2">
-        Property Video
+        {t("seller.propertyVideo")}
       </label>
 
       <label
@@ -471,11 +474,11 @@ function SellerForm() {
         <div className="space-y-2">
 
           <p className="font-medium text-gray-700">
-            🎥 Upload Property Video
+            {t("seller.uploadVideo")}
           </p>
 
           <p className="text-sm text-gray-500">
-            MP4, MOV supported
+           {t("seller.videoFormats")}
           </p>
 
           {formData.video && (
@@ -549,7 +552,7 @@ function SellerForm() {
           transition
         "
       >
-        Remove
+        {t("seller.remove")}
       </button>
 
     </div>
@@ -561,7 +564,7 @@ function SellerForm() {
 
           <div className="flex justify-center">
             <SubmitButton 
-              text="Continue"
+              text="common.continue"
               loading={loading}
             />
           </div>

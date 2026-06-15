@@ -1,0 +1,251 @@
+{
+"continue": "जारी रखें",
+"fullName": "पूरा नाम",
+"mobileNumber": "मोबाइल नंबर",
+"email": "ईमेल पता",
+
+"questionTitle": "आप क्या खोज रहे हैं?",
+"questionSubtitle": "अपने लक्ष्य का चयन करें ताकि हम आपको बेहतर रियल एस्टेट अनुभव प्रदान कर सकें।",
+
+"buyProperty": "संपत्ति खरीदें",
+"buyPropertyDesc": "विशेष प्रॉपर्टी लिस्टिंग देखें और अपना सपनों का घर या निवेश खोजें।",
+
+"sellProperty": "संपत्ति बेचें",
+"sellPropertyDesc": "अपनी संपत्ति योग्य खरीदारों तक पहुँचाएँ।",
+
+"rentOutProperty": "संपत्ति किराए पर दें",
+"rentOutPropertyDesc": "विश्वसनीय किरायेदार खोजें और अपनी संपत्ति का बेहतर प्रबंधन करें।",
+
+"findRentalProperty": "किराये की संपत्ति खोजें",
+"findRentalPropertyDesc": "अपनी पसंद के क्षेत्र में उपयुक्त किराये का घर खोजें।",
+
+"common": {
+"submit": "सबमिट करें",
+"continue": "जारी रखें",
+"uploading": "प्रॉपर्टी अपलोड की जा रही है...",
+"fullName": "पूरा नाम",
+"mobileNumber": "मोबाइल नंबर",
+"whatsappNumber": "व्हाट्सएप नंबर",
+"email": "ईमेल पता",
+"city": "शहर",
+"state": "राज्य",
+"pinCode": "पिन कोड",
+"address": "पता",
+"propertyType": "संपत्ति का प्रकार"
+},
+
+"propertyTypes": {
+"Flat": "फ्लैट",
+"House": "मकान",
+"Villa": "विला",
+"Plot/Land": "प्लॉट / जमीन"
+},
+
+"buyer": {
+    "title": "अपनी सपनों की संपत्ति खोजें",
+    "subtitle": "अपनी आवश्यकताएँ बताएं और हमारी टीम आपको उपयुक्त संपत्ति खोजने में सहायता करेगी।",
+
+    "personalInfo": "व्यक्तिगत जानकारी",
+    "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+
+    "addressInfo": "पता जानकारी",
+    "addressInfoDesc": "हमें अपना वर्तमान पता बताएं।",
+
+    "propertyRequirements": "संपत्ति आवश्यकताएँ",
+    "propertyRequirementsDesc": "हमें बताएं कि आप किस प्रकार की संपत्ति चाहते हैं।",
+
+    "budget": "बजट",
+    "preferredLocation": "पसंदीदा स्थान",
+
+    "additionalRequirements": "अतिरिक्त आवश्यकताएँ",
+    "additionalRequirementsDesc": "अपनी विशेष आवश्यकताएँ साझा करें।",
+    "additionalRequirementsPlaceholder": "स्कूल के पास, पार्किंग, गेटेड सोसाइटी आदि..."
+  },
+
+"seller": {
+  "title": "अपनी संपत्ति जल्दी बेचें",
+  "subtitle": "अपनी संपत्ति की जानकारी साझा करें और गंभीर खरीदारों से जल्दी जुड़ें।",
+
+  "personalInfo": "व्यक्तिगत जानकारी",
+  "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+
+  "addressInfo": "पता जानकारी",
+  "addressInfoDesc": "अपना वर्तमान पता बताएं।",
+
+  "propertyDetails": "संपत्ति विवरण",
+  "propertyDetailsDesc": "जिस संपत्ति को आप बेचना चाहते हैं उसके बारे में बताएं।",
+
+  "propertyLocation": "संपत्ति का स्थान",
+  "expectedSellingPrice": "अपेक्षित बिक्री मूल्य",
+
+  "additionalDetails": "अतिरिक्त विवरण",
+  "additionalDetailsDesc": "अपनी संपत्ति के बारे में अधिक जानकारी दें।",
+  "additionalDetailsPlaceholder": "3BHK, पार्किंग, फर्निश्ड, कॉर्नर प्रॉपर्टी, बाजार के पास...",
+
+  "mediaTitle": "संपत्ति की फोटो और वीडियो",
+  "mediaDesc": "संपत्ति की फोटो और वीडियो अपलोड करें।",
+
+  "propertyImages": "संपत्ति की तस्वीरें",
+  "uploadImages": "📷 संपत्ति की तस्वीरें अपलोड करें",
+  "imageFormats": "JPG, PNG, WEBP समर्थित हैं",
+  "imagesSelected": "तस्वीरें चुनी गई हैं",
+
+  "propertyVideo": "संपत्ति का वीडियो",
+  "uploadVideo": "🎥 संपत्ति का वीडियो अपलोड करें",
+  "videoFormats": "MP4, MOV समर्थित हैं",
+
+  "remove": "हटाएँ"
+},
+
+"landlord": {
+  "title": "सत्यापित किरायेदार खोजें",
+  "subtitle": "अपनी संपत्ति की जानकारी साझा करें और हम आपको उपयुक्त किरायेदारों से जोड़ेंगे।",
+
+  "personalInfo": "व्यक्तिगत जानकारी",
+  "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+
+  "addressInfo": "पता जानकारी",
+  "addressInfoDesc": "हमें अपना वर्तमान पता बताएं।",
+
+  "propertyDetails": "किराये की संपत्ति का विवरण",
+  "propertyDetailsDesc": "जिस संपत्ति को आप किराये पर देना चाहते हैं उसके बारे में बताएं।",
+
+  "propertyLocation": "संपत्ति का स्थान",
+  "monthlyRent": "मासिक किराया",
+  "availableFrom": "उपलब्धता तिथि",
+
+  "additionalDetails": "अतिरिक्त विवरण",
+  "additionalDetailsDesc": "संपत्ति के बारे में अतिरिक्त जानकारी साझा करें।",
+  "additionalDetailsPlaceholder": "2BHK, फर्निश्ड, पार्किंग उपलब्ध, परिवार को प्राथमिकता...",
+
+  "mediaTitle": "संपत्ति की फोटो और वीडियो",
+  "mediaDesc": "संपत्ति की फोटो और वीडियो अपलोड करें।",
+
+  "propertyImages": "संपत्ति की तस्वीरें",
+  "uploadImages": "📷 संपत्ति की तस्वीरें अपलोड करें",
+  "imageFormats": "JPG, PNG, WEBP समर्थित हैं",
+  "imagesSelected": "तस्वीरें चुनी गई हैं",
+
+  "propertyVideo": "संपत्ति का वीडियो",
+  "uploadVideo": "🎥 संपत्ति का वीडियो अपलोड करें",
+  "videoFormats": "MP4, MOV समर्थित हैं",
+
+  "remove": "हटाएँ",
+
+  "service": "किरायेदार खोज सेवा"
+},
+
+"tenant": {
+  "title": "अपना अगला किराये का घर खोजें",
+  "subtitle": "अपनी आवश्यकताएँ बताएं और हम आपको उपयुक्त किराये की संपत्ति खोजने में मदद करेंगे।",
+
+  "personalInfo": "व्यक्तिगत जानकारी",
+  "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+
+  "currentAddress": "वर्तमान पता",
+  "currentAddressDesc": "हमें बताएं कि आप वर्तमान में कहाँ रह रहे हैं।",
+
+  "requirements": "किराये की आवश्यकताएँ",
+  "requirementsDesc": "हमें बताएं कि आप किस प्रकार की संपत्ति चाहते हैं।",
+
+  "preferredLocation": "पसंदीदा स्थान",
+  "monthlyBudget": "मासिक बजट",
+  "moveInDate": "शिफ्ट होने की तिथि",
+
+  "additionalRequirements": "अतिरिक्त आवश्यकताएँ",
+  "additionalRequirementsDesc": "अपनी विशेष आवश्यकताएँ साझा करें।",
+  "additionalRequirementsPlaceholder": "फर्निश्ड, पार्किंग, ऑफिस के पास, परिवार के लिए उपयुक्त, पालतू जानवरों की अनुमति आदि...",
+
+  "service": "हाउस हंटिंग सेवा"
+},
+
+"packages": {
+  "back": "वापस",
+
+  "title": "अपना पैकेज चुनें",
+  "subtitle": "अपनी संपत्ति की आवश्यकताओं के अनुसार सबसे उपयुक्त पैकेज चुनें।",
+
+  "needHelp": "पैकेज चुनने में सहायता चाहिए?",
+  "needHelpDesc": "हमारे प्रॉपर्टी सलाहकार से बात करें और हम सही योजना चुनने में आपकी मदद करेंगे।",
+
+  "chatWhatsapp": "व्हाट्सएप पर चैट करें",
+
+  "leadNotFound": "लीड नहीं मिली",
+  "invalidRole": "अमान्य भूमिका",
+  "updateFailed": "पैकेज अपडेट नहीं हो सका",
+
+  "selectPlan": "प्लान चुनें",
+  "contactUs": "संपर्क करें",
+  "proceedToPayment": "भुगतान के लिए आगे बढ़ें",
+
+  "seller100Leads": "100 खरीदार लीड्स",
+  "seller300Leads": "300 खरीदार लीड्स",
+  "sellOnCommission": "कमीशन पर बिक्री",
+
+  "tenantFinderService": "किरायेदार खोज सेवा",
+  "houseHuntingService": "हाउस हंटिंग सेवा",
+
+  "upTo100Leads": "100 तक खरीदार लीड्स",
+  "upTo300Leads": "300 तक खरीदार लीड्स",
+  "directBuyerContact": "खरीदारों की सीधी संपर्क जानकारी",
+  "fasterExposure": "तेज़ संपत्ति प्रचार",
+  "maximumVisibility": "अधिकतम संपत्ति दृश्यता",
+
+  "noUpfrontPayment": "कोई अग्रिम भुगतान नहीं",
+  "weMarketProperty": "हम आपकी संपत्ति का प्रचार करेंगे",
+  "payAfterSale": "सफल बिक्री के बाद ही भुगतान करें",
+
+  "oneTimeFee": "एक बार का शुल्क",
+  "validUntilTenantFound": "किरायेदार मिलने तक मान्य",
+  "tenantVerification": "किरायेदार सत्यापन सहायता",
+
+  "personalizedSearch": "व्यक्तिगत संपत्ति खोज",
+  "rentalAssistance": "किराये की संपत्ति सहायता",
+  "moneyBack": "30 दिनों के भीतर पैसा वापसी*",
+
+  "mostPopular": "सबसे लोकप्रिय"
+
+},
+
+"payment": {
+  "title": "अपना भुगतान पूरा करें",
+  "subtitle": "अपना पैकेज सुरक्षित करें और FutureNest सेवाओं की शुरुआत करें।",
+
+  "selectedPackage": "चयनित पैकेज",
+
+  "scanPay": "स्कैन करें और भुगतान करें",
+  "scanQrDesc": "किसी भी UPI ऐप का उपयोग करके QR कोड स्कैन करें।",
+
+  "upiPayment": "UPI भुगतान",
+  "upiId": "UPI आईडी",
+  "copy": "कॉपी करें",
+  "upiCopied": "UPI आईडी कॉपी हो गई",
+
+  "paymentProcess": "भुगतान प्रक्रिया",
+
+  "step1": "QR स्कैन करें या UPI आईडी से भुगतान करें",
+  "step2": "भुगतान पूरा करें",
+  "step3": "भुगतान का स्क्रीनशॉट लें",
+  "step4": "व्हाट्सएप पर स्क्रीनशॉट भेजें",
+  "step5": "हमारी टीम भुगतान सत्यापित करेगी",
+
+  "verificationTitle": "भुगतान सत्यापन",
+  "verificationDesc": "भुगतान पूरा करने के बाद सत्यापन हेतु स्क्रीनशॉट व्हाट्सएप पर भेजें।",
+
+  "sendScreenshot": "व्हाट्सएप पर स्क्रीनशॉट भेजें",
+  "alreadySent": "मैं पहले ही भेज चुका हूँ",
+
+  "whatsappMessage": "नमस्ते FutureNest टीम,\n\nमैंने भुगतान पूरा कर दिया है।\n\nपैकेज:",
+  "amount": "राशि",
+  "verificationLine": "मैं सत्यापन के लिए भुगतान का स्क्रीनशॉट संलग्न कर रहा हूँ।"
+},
+
+"success": {
+  "title": "धन्यवाद!",
+  "description": "आपकी जानकारी सफलतापूर्वक जमा कर दी गई है। हमारी टीम आपके विवरण की समीक्षा करेगी और जल्द ही आपसे संपर्क करेगी।",
+
+  "whatsapp": "व्हाट्सएप पर संपर्क करें",
+  "call": "हमें कॉल करें",
+  "home": "होम पेज पर वापस जाएँ"
+}
+}
