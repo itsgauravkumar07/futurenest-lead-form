@@ -12,7 +12,7 @@ function QuestionPage() {
   };
 
   return (
-    <div className="bg-slate-50 px-4 py-6">
+    <div className="bg-slate-50 px-4 py-6 md:py-0">
       <div className="max-w-4xl mx-auto min-h-[calc(100vh-112px)] flex items-center">
       <div className="max-w-4xl mx-auto w-full">
 

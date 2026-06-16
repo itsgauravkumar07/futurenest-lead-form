@@ -1,5 +1,6 @@
 import logo from "../assets/logo.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -8,11 +9,13 @@ function Navbar() {
 
         <div className="h-16 flex items-center justify-between">
 
-          <img
-            src={logo}
-            alt="FutureNest"
-            className="h-10 w-auto object-contain"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="FutureNest"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
           <LanguageSwitcher />
 

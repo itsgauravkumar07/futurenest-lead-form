@@ -4,20 +4,21 @@
 "mobileNumber": "मोबाइल नंबर",
 "email": "ईमेल पता",
 
-"questionTitle": "आप क्या खोज रहे हैं?",
-"questionSubtitle": "अपने लक्ष्य का चयन करें ताकि हम आपको बेहतर रियल एस्टेट अनुभव प्रदान कर सकें।",
+  "questionTitle": "आप क्या करना चाहते हैं?",
 
-"buyProperty": "संपत्ति खरीदें",
-"buyPropertyDesc": "विशेष प्रॉपर्टी लिस्टिंग देखें और अपना सपनों का घर या निवेश खोजें।",
+  "questionSubtitle": "अपनी ज़रूरत के अनुसार एक विकल्प चुनें।",
 
-"sellProperty": "संपत्ति बेचें",
-"sellPropertyDesc": "अपनी संपत्ति योग्य खरीदारों तक पहुँचाएँ।",
+  "buyProperty": "प्रॉपर्टी खरीदना है",
+  "buyPropertyDesc": "अपना पसंदीदा घर या प्रॉपर्टी खोजें।",
 
-"rentOutProperty": "संपत्ति किराए पर दें",
-"rentOutPropertyDesc": "विश्वसनीय किरायेदार खोजें और अपनी संपत्ति का बेहतर प्रबंधन करें।",
+  "sellProperty": "घर बेचना है",
+  "sellPropertyDesc": "अपनी प्रॉपर्टी बेचने के लिए खरीदार खोजें।",
 
-"findRentalProperty": "किराये की संपत्ति खोजें",
-"findRentalPropertyDesc": "अपनी पसंद के क्षेत्र में उपयुक्त किराये का घर खोजें।",
+  "rentOutProperty": "घर किराये पर देना है",
+  "rentOutPropertyDesc": "अपनी प्रॉपर्टी के लिए किरायेदार खोजें।",
+
+  "findRentalProperty": "किराये का घर चाहिए",
+  "findRentalPropertyDesc": "अपनी पसंद का किराये का घर खोजें।",
 
 "common": {
 "submit": "सबमिट करें",
@@ -43,121 +44,93 @@
 },
 
 "buyer": {
-    "title": "अपनी सपनों की संपत्ति खोजें",
-    "subtitle": "अपनी आवश्यकताएँ बताएं और हमारी टीम आपको उपयुक्त संपत्ति खोजने में सहायता करेगी।",
+"title": "अपना पसंदीदा प्रॉपर्टी खोजें",
+"subtitle": "अपनी ज़रूरत बताएं, हम सही प्रॉपर्टी ढूंढने में मदद करेंगे।",
 
-    "personalInfo": "व्यक्तिगत जानकारी",
-    "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+"personalInfo": "आपकी जानकारी",
+"personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क करें।",
 
-    "addressInfo": "पता जानकारी",
-    "addressInfoDesc": "हमें अपना वर्तमान पता बताएं।",
+"addressInfo": "पते की जानकारी",
+"addressInfoDesc": "अपना वर्तमान पता बताएं।",
 
-    "propertyRequirements": "संपत्ति आवश्यकताएँ",
-    "propertyRequirementsDesc": "हमें बताएं कि आप किस प्रकार की संपत्ति चाहते हैं।",
+"propertyRequirements": "आपकी ज़रूरत",
+"propertyRequirementsDesc": "हमें बताएं कि आपको कैसी प्रॉपर्टी चाहिए।",
 
-    "budget": "बजट",
-    "preferredLocation": "पसंदीदा स्थान",
+"budget": "बजट",
+"preferredLocation": "पसंदीदा जगह",
 
-    "additionalRequirements": "अतिरिक्त आवश्यकताएँ",
-    "additionalRequirementsDesc": "अपनी विशेष आवश्यकताएँ साझा करें।",
-    "additionalRequirementsPlaceholder": "स्कूल के पास, पार्किंग, गेटेड सोसाइटी आदि..."
-  },
+"additionalRequirements": "अन्य ज़रूरतें",
+"additionalRequirementsDesc": "अगर कोई खास ज़रूरत हो तो बताएं।",
+"additionalRequirementsPlaceholder": "स्कूल के पास, पार्किंग, गेटेड सोसाइटी आदि..."
+},
 
 "seller": {
-  "title": "अपनी संपत्ति जल्दी बेचें",
-  "subtitle": "अपनी संपत्ति की जानकारी साझा करें और गंभीर खरीदारों से जल्दी जुड़ें।",
+"title": "अपनी प्रॉपर्टी जल्दी बेचें",
+"subtitle": "प्रॉपर्टी की जानकारी दें और खरीदारों से जुड़ें।",
 
-  "personalInfo": "व्यक्तिगत जानकारी",
-  "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+"personalInfo": "आपकी जानकारी",
+"personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क करें।",
 
-  "addressInfo": "पता जानकारी",
-  "addressInfoDesc": "अपना वर्तमान पता बताएं।",
+"addressInfo": "पते की जानकारी",
+"addressInfoDesc": "अपना वर्तमान पता बताएं।",
 
-  "propertyDetails": "संपत्ति विवरण",
-  "propertyDetailsDesc": "जिस संपत्ति को आप बेचना चाहते हैं उसके बारे में बताएं।",
+"propertyDetails": "प्रॉपर्टी की जानकारी",
+"propertyDetailsDesc": "जिस प्रॉपर्टी को बेचना चाहते हैं उसके बारे में बताएं।",
 
-  "propertyLocation": "संपत्ति का स्थान",
-  "expectedSellingPrice": "अपेक्षित बिक्री मूल्य",
+"propertyLocation": "प्रॉपर्टी का स्थान",
+"expectedSellingPrice": "अपेक्षित कीमत",
 
-  "additionalDetails": "अतिरिक्त विवरण",
-  "additionalDetailsDesc": "अपनी संपत्ति के बारे में अधिक जानकारी दें।",
-  "additionalDetailsPlaceholder": "3BHK, पार्किंग, फर्निश्ड, कॉर्नर प्रॉपर्टी, बाजार के पास...",
+"additionalDetails": "अतिरिक्त जानकारी",
+"additionalDetailsDesc": "प्रॉपर्टी के बारे में और जानकारी दें।",
 
-  "mediaTitle": "संपत्ति की फोटो और वीडियो",
-  "mediaDesc": "संपत्ति की फोटो और वीडियो अपलोड करें।",
-
-  "propertyImages": "संपत्ति की तस्वीरें",
-  "uploadImages": "📷 संपत्ति की तस्वीरें अपलोड करें",
-  "imageFormats": "JPG, PNG, WEBP समर्थित हैं",
-  "imagesSelected": "तस्वीरें चुनी गई हैं",
-
-  "propertyVideo": "संपत्ति का वीडियो",
-  "uploadVideo": "🎥 संपत्ति का वीडियो अपलोड करें",
-  "videoFormats": "MP4, MOV समर्थित हैं",
-
-  "remove": "हटाएँ"
+"mediaTitle": "फोटो और वीडियो",
+"mediaDesc": "प्रॉपर्टी की फोटो और वीडियो अपलोड करें।"
 },
 
 "landlord": {
-  "title": "सत्यापित किरायेदार खोजें",
-  "subtitle": "अपनी संपत्ति की जानकारी साझा करें और हम आपको उपयुक्त किरायेदारों से जोड़ेंगे।",
+"title": "अच्छे किरायेदार खोजें",
+"subtitle": "प्रॉपर्टी की जानकारी दें और सही किरायेदार पाएं।",
 
-  "personalInfo": "व्यक्तिगत जानकारी",
-  "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+"personalInfo": "आपकी जानकारी",
+"personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क करें।",
 
-  "addressInfo": "पता जानकारी",
-  "addressInfoDesc": "हमें अपना वर्तमान पता बताएं।",
+"addressInfo": "पते की जानकारी",
+"addressInfoDesc": "अपना वर्तमान पता बताएं।",
 
-  "propertyDetails": "किराये की संपत्ति का विवरण",
-  "propertyDetailsDesc": "जिस संपत्ति को आप किराये पर देना चाहते हैं उसके बारे में बताएं।",
+"propertyDetails": "किराये की प्रॉपर्टी की जानकारी",
+"propertyDetailsDesc": "जिस प्रॉपर्टी को किराये पर देना चाहते हैं उसके बारे में बताएं।",
 
-  "propertyLocation": "संपत्ति का स्थान",
-  "monthlyRent": "मासिक किराया",
-  "availableFrom": "उपलब्धता तिथि",
+"propertyLocation": "प्रॉपर्टी का स्थान",
+"monthlyRent": "मासिक किराया",
+"availableFrom": "कब से उपलब्ध",
 
-  "additionalDetails": "अतिरिक्त विवरण",
-  "additionalDetailsDesc": "संपत्ति के बारे में अतिरिक्त जानकारी साझा करें।",
-  "additionalDetailsPlaceholder": "2BHK, फर्निश्ड, पार्किंग उपलब्ध, परिवार को प्राथमिकता...",
+"additionalDetails": "अतिरिक्त जानकारी",
+"additionalDetailsDesc": "प्रॉपर्टी के बारे में और जानकारी दें।",
 
-  "mediaTitle": "संपत्ति की फोटो और वीडियो",
-  "mediaDesc": "संपत्ति की फोटो और वीडियो अपलोड करें।",
-
-  "propertyImages": "संपत्ति की तस्वीरें",
-  "uploadImages": "📷 संपत्ति की तस्वीरें अपलोड करें",
-  "imageFormats": "JPG, PNG, WEBP समर्थित हैं",
-  "imagesSelected": "तस्वीरें चुनी गई हैं",
-
-  "propertyVideo": "संपत्ति का वीडियो",
-  "uploadVideo": "🎥 संपत्ति का वीडियो अपलोड करें",
-  "videoFormats": "MP4, MOV समर्थित हैं",
-
-  "remove": "हटाएँ",
-
-  "service": "किरायेदार खोज सेवा"
+"service": "किरायेदार खोज सेवा"
 },
 
 "tenant": {
-  "title": "अपना अगला किराये का घर खोजें",
-  "subtitle": "अपनी आवश्यकताएँ बताएं और हम आपको उपयुक्त किराये की संपत्ति खोजने में मदद करेंगे।",
+"title": "किराये का घर खोजें",
+"subtitle": "अपनी ज़रूरत बताएं, हम सही घर ढूंढने में मदद करेंगे।",
 
-  "personalInfo": "व्यक्तिगत जानकारी",
-  "personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क कर सकते हैं।",
+"personalInfo": "आपकी जानकारी",
+"personalInfoDesc": "हमें बताएं कि हम आपसे कैसे संपर्क करें।",
 
-  "currentAddress": "वर्तमान पता",
-  "currentAddressDesc": "हमें बताएं कि आप वर्तमान में कहाँ रह रहे हैं।",
+"currentAddress": "वर्तमान पता",
+"currentAddressDesc": "अभी आप कहाँ रह रहे हैं, बताएं।",
 
-  "requirements": "किराये की आवश्यकताएँ",
-  "requirementsDesc": "हमें बताएं कि आप किस प्रकार की संपत्ति चाहते हैं।",
+"requirements": "आपकी ज़रूरत",
+"requirementsDesc": "हमें बताएं कि आपको कैसी प्रॉपर्टी चाहिए।",
 
-  "preferredLocation": "पसंदीदा स्थान",
-  "monthlyBudget": "मासिक बजट",
-  "moveInDate": "शिफ्ट होने की तिथि",
+"preferredLocation": "पसंदीदा जगह",
+"monthlyBudget": "मासिक बजट",
+"moveInDate": "शिफ्ट होने की तारीख",
 
-  "additionalRequirements": "अतिरिक्त आवश्यकताएँ",
-  "additionalRequirementsDesc": "अपनी विशेष आवश्यकताएँ साझा करें।",
-  "additionalRequirementsPlaceholder": "फर्निश्ड, पार्किंग, ऑफिस के पास, परिवार के लिए उपयुक्त, पालतू जानवरों की अनुमति आदि...",
+"additionalRequirements": "अन्य ज़रूरतें",
+"additionalRequirementsDesc": "अगर कोई खास ज़रूरत हो तो बताएं।",
 
-  "service": "हाउस हंटिंग सेवा"
+"service": "घर खोज सेवा"
 },
 
 "packages": {
@@ -166,8 +139,8 @@
   "title": "अपना पैकेज चुनें",
   "subtitle": "अपनी संपत्ति की आवश्यकताओं के अनुसार सबसे उपयुक्त पैकेज चुनें।",
 
-  "needHelp": "पैकेज चुनने में सहायता चाहिए?",
-  "needHelpDesc": "हमारे प्रॉपर्टी सलाहकार से बात करें और हम सही योजना चुनने में आपकी मदद करेंगे।",
+  "needHelp": "मदद चाहिए?",
+  "needHelpDesc": "हमारे सलाहकार से बात करें, हम सही प्लान चुनने में मदद करेंगे।",
 
   "chatWhatsapp": "व्हाट्सएप पर चैट करें",
 
@@ -230,8 +203,8 @@
   "step4": "व्हाट्सएप पर स्क्रीनशॉट भेजें",
   "step5": "हमारी टीम भुगतान सत्यापित करेगी",
 
-  "verificationTitle": "भुगतान सत्यापन",
-  "verificationDesc": "भुगतान पूरा करने के बाद सत्यापन हेतु स्क्रीनशॉट व्हाट्सएप पर भेजें।",
+  "verificationTitle": "भुगतान की पुष्टि",
+  "verificationDesc": "भुगतान करने के बाद स्क्रीनशॉट व्हाट्सएप पर भेजें।",
 
   "sendScreenshot": "व्हाट्सएप पर स्क्रीनशॉट भेजें",
   "alreadySent": "मैं पहले ही भेज चुका हूँ",
@@ -243,7 +216,7 @@
 
 "success": {
   "title": "धन्यवाद!",
-  "description": "आपकी जानकारी सफलतापूर्वक जमा कर दी गई है। हमारी टीम आपके विवरण की समीक्षा करेगी और जल्द ही आपसे संपर्क करेगी।",
+  "description": "आपकी जानकारी सफलतापूर्वक जमा हो गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।",
 
   "whatsapp": "व्हाट्सएप पर संपर्क करें",
   "call": "हमें कॉल करें",
