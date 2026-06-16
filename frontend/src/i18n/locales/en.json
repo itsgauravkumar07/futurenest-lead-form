@@ -39,7 +39,7 @@
 "Flat": "Flat",
 "House": "House",
 "Villa": "Villa",
-"Plot/Land": "Plot/Land"
+"Plot": "Plot"
 },
 
   "buyer": {
@@ -50,7 +50,7 @@
     "personalInfoDesc": "Tell us how we can contact you.",
 
     "addressInfo": "Address Information",
-    "addressInfoDesc": "Tell us your current address.",
+    "addressInfoDesc": "Tell us your current city.",
 
     "propertyRequirements": "Property Requirements",
     "propertyRequirementsDesc": "Tell us what you're looking for.",
@@ -157,7 +157,8 @@
   "additionalRequirementsDesc": "Share any special requirements.",
   "additionalRequirementsPlaceholder": "Furnished, Parking, Near Office, Family Friendly, Pet Friendly...",
 
-  "service": "House Hunting Service"
+  "service": "House Hunting Service",
+  "occupation": "Occupation"
 },
 
 

@@ -15,6 +15,10 @@ function InputField({
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-2">
         {t(label)}
+
+          {required && (
+          <span className="text-red-500 ml-1">*</span>
+        )}
       </label>
 
       <input

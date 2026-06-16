@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 
-import BuyerForm from "../components/BuyerForm";
-import SellerForm from "../components/SellerForm";
-import LandLordForm from "../components/LandLordForm";
-import TenantForm from "../components/TenantForm";
+import BuyerForm from "../components/forms/BuyerForm";
+import SellerForm from "../components/forms/SellerForm";
+import LandLordForm from "../components/forms/LandLordForm";
+import TenantForm from "../components/forms/TenantForm";
 
 function FormPage() {
   const { role } = useParams();

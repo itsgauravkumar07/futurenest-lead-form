@@ -2,13 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import API from "../services/api";
+import API from "../../services/api";
 
-import FormSection from "../components/form-components/FormSection";
-import InputField from "../components/form-components/InputFields";
-import PropertyTypeSelector from "../components/form-components/PropertyTypeSelector";
-import SubmitButton from "../components/form-components/SubmitButton";
-import BackButton from "../components/BackBtn";
+import FormSection from "../form-components/FormSection";
+import InputField from "../form-components/InputFields";
+import PropertyTypeSelector from "../form-components/PropertyTypeSelector";
+import SubmitButton from "../form-components/SubmitButton";
+import BackButton from "../BackBtn";
+
+import PropertyCategorySelector from "../form-components/PropertyCategorySelector";
 
 function BuyerForm() {
   const navigate = useNavigate();
@@ -30,10 +32,22 @@ function BuyerForm() {
   });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+  if (name === "propertyCategory") {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      propertyCategory: value,
+      propertyType: "",
     });
+
+    return;
+  }
+
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
   };
 
   const handleSubmit = async (e) => {
@@ -136,42 +150,12 @@ function BuyerForm() {
           >
             <div className="space-y-4">
 
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  {t("common.address")}
-                </label>
-
-                <textarea
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  rows="3"
-                  className="w-full border border-gray-300 rounded-xl p-3"
-                />
-              </div>
-
               <div className="grid md:grid-cols-3 gap-4">
 
                 <InputField
                   label="common.city"
                   name="city"
                   value={formData.city}
-                  onChange={handleChange}
-                  required
-                />
-
-                <InputField
-                  label="common.state"
-                  name="state"
-                  value={formData.state}
-                  onChange={handleChange}
-                  required
-                />
-
-                <InputField
-                  label="common.pinCode"
-                  name="pinCode"
-                  value={formData.pinCode}
                   onChange={handleChange}
                   required
                 />
@@ -189,10 +173,16 @@ function BuyerForm() {
           >
             <div className="space-y-4">
 
-              <PropertyTypeSelector
-                value={formData.propertyType}
-                onChange={handleChange}
-              />
+             <PropertyCategorySelector
+              value={formData.propertyCategory}
+              onChange={handleChange}
+            />
+
+            <PropertyTypeSelector
+              category={formData.propertyCategory}
+              value={formData.propertyType}
+              onChange={handleChange}
+            />
 
               <div className="grid md:grid-cols-2 gap-4">
 

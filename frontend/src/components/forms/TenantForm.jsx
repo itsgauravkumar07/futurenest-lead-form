@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../services/api";
+import API from "../../services/api";
 
-import FormSection from "./form-components/FormSection";
-import InputField from "./form-components/InputFields";
-import PropertyTypeSelector from "./form-components/PropertyTypeSelector";
-import SubmitButton from "./form-components/SubmitButton";
-import BackButton from "./BackBtn"
+import FormSection from "../form-components/FormSection";
+import InputField from "../form-components/InputFields";
+import PropertyTypeSelector from "../form-components/PropertyTypeSelector";
+import SubmitButton from "../form-components/SubmitButton";
+import BackButton from "../BackBtn"
+import PropertyCategorySelector from "../form-components/PropertyCategorySelector";
 
 import { useTranslation } from "react-i18next";
 
@@ -26,20 +27,36 @@ function TenantForm() {
     state: "",
     pinCode: "",
 
+    propertyCategory: "",
     requirementType: "",
     preferredLocation: "",
     monthlyBudget: "",
     moveInDate: "",
+
+    occupation: "",
+
     additionalRequirements: "",
 
     packageSelected: "House Hunting Service",
   });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+  if (name === "propertyCategory") {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      propertyCategory: value,
+      requirementType: "",
     });
+
+    return;
+  }
+
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
   };
 
   const handleSubmit = async (e) => {
@@ -197,16 +214,21 @@ function TenantForm() {
           >
             <div className="space-y-4">
 
+             <PropertyCategorySelector
+                value={formData.propertyCategory}
+                onChange={handleChange}
+              />
+
               <PropertyTypeSelector
+                category={formData.propertyCategory}
                 value={formData.requirementType}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
-                    requirementType:
-                      e.target.value,
+                    requirementType: e.target.value,
                   })
                 }
-              />
+/>
 
               <div className="grid md:grid-cols-2 gap-4">
 
@@ -223,6 +245,14 @@ function TenantForm() {
                   type="number"
                   name="monthlyBudget"
                   value={formData.monthlyBudget}
+                  onChange={handleChange}
+                  required
+                />
+
+                <InputField
+                  label="tenant.occupation"
+                  name="occupation"
+                  value={formData.occupation}
                   onChange={handleChange}
                   required
                 />

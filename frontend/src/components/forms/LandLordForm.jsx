@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../services/api";
+import API from "../../services/api";
 
 import { useTranslation } from "react-i18next";
 
-import FormSection from "./form-components/FormSection";
-import InputField from "./form-components/InputFields";
-import PropertyTypeSelector from "./form-components/PropertyTypeSelector";
-import SubmitButton from "./form-components/SubmitButton";
+import FormSection from "../form-components/FormSection";
+import InputField from "../form-components/InputFields";
+import PropertyTypeSelector from "../form-components/PropertyTypeSelector";
+import SubmitButton from "../form-components/SubmitButton";
 
-import BackButton from "./BackBtn"
+import PropertyCategorySelector from "../form-components/PropertyCategorySelector";
+
+import BackButton from "../BackBtn"
 
 function LandLordForm() {
   const navigate = useNavigate();
@@ -29,6 +31,7 @@ function LandLordForm() {
     state: "",
     pinCode: "",
 
+    propertyCategory: "",
     propertyType: "",
     propertyLocation: "",
     monthlyRent: "",
@@ -42,10 +45,22 @@ function LandLordForm() {
   });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+  if (name === "propertyCategory") {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      propertyCategory: value,
+      propertyType: "",
     });
+
+    return;
+  }
+
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
   };
 
   const handleSubmit = async (e) => {
@@ -93,6 +108,11 @@ function LandLordForm() {
     formDataToSend.append(
       "pinCode",
       formData.pinCode
+    );
+
+    formDataToSend.append(
+      "propertyCategory",
+      formData.propertyCategory
     );
 
     formDataToSend.append(
@@ -241,6 +261,7 @@ function LandLordForm() {
               <div>
                 <label className="block text-sm font-medium mb-2">
                   {t("common.address")}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
 
                 <textarea
@@ -289,10 +310,16 @@ function LandLordForm() {
           >
             <div className="space-y-4">
 
-              <PropertyTypeSelector
-                value={formData.propertyType}
-                onChange={handleChange}
-              />
+             <PropertyCategorySelector
+              value={formData.propertyCategory}
+              onChange={handleChange}
+            />
+
+            <PropertyTypeSelector
+              category={formData.propertyCategory}
+              value={formData.propertyType}
+              onChange={handleChange}
+            />
 
               <div className="grid md:grid-cols-2 gap-4">
 
@@ -603,7 +630,6 @@ function LandLordForm() {
 )}
   </div>
           </FormSection>
-          
 
           <div className="flex justify-center">
             <SubmitButton 

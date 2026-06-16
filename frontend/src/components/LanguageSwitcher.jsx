@@ -10,7 +10,7 @@ function LanguageSwitcher() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative text-center">
       <Globe
         size={16}
         className="
@@ -47,16 +47,19 @@ function LanguageSwitcher() {
           focus:ring-2
           focus:ring-green-500
           focus:border-green-500
-          transition
+          transition 
         "
       >
-        <option value="en">
-          English
+        <>
+           <option value="en">
+          हिन्दी
         </option>
 
         <option value="hi">
-          हिन्दी
+          English
         </option>
+        </>
+       
       </select>
     </div>
   );

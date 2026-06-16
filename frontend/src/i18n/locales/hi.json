@@ -33,14 +33,14 @@
 "state": "राज्य",
 "pinCode": "पिन कोड",
 "address": "पता",
-"propertyType": "संपत्ति का प्रकार"
+"propertyType": "प्रॉपर्टीका प्रकार"
 },
 
 "propertyTypes": {
 "Flat": "फ्लैट",
 "House": "मकान",
 "Villa": "विला",
-"Plot/Land": "प्लॉट / जमीन"
+"Plot": "प्लॉट"
 },
 
 "buyer": {
@@ -130,14 +130,15 @@
 "additionalRequirements": "अन्य ज़रूरतें",
 "additionalRequirementsDesc": "अगर कोई खास ज़रूरत हो तो बताएं।",
 
-"service": "घर खोज सेवा"
+"service": "घर खोज सेवा",
+"occupation": "आपका पेशा"
 },
 
 "packages": {
   "back": "वापस",
 
   "title": "अपना पैकेज चुनें",
-  "subtitle": "अपनी संपत्ति की आवश्यकताओं के अनुसार सबसे उपयुक्त पैकेज चुनें।",
+  "subtitle": "अपनी प्रॉपर्टी की आवश्यकताओं के अनुसार सबसे उपयुक्त पैकेज चुनें।",
 
   "needHelp": "मदद चाहिए?",
   "needHelpDesc": "हमारे सलाहकार से बात करें, हम सही प्लान चुनने में मदद करेंगे।",
@@ -162,19 +163,19 @@
   "upTo100Leads": "100 तक खरीदार लीड्स",
   "upTo300Leads": "300 तक खरीदार लीड्स",
   "directBuyerContact": "खरीदारों की सीधी संपर्क जानकारी",
-  "fasterExposure": "तेज़ संपत्ति प्रचार",
-  "maximumVisibility": "अधिकतम संपत्ति दृश्यता",
+  "fasterExposure": "तेज़ प्रॉपर्टीप्रचार",
+  "maximumVisibility": "अधिकतम प्रॉपर्टीदृश्यता",
 
   "noUpfrontPayment": "कोई अग्रिम भुगतान नहीं",
-  "weMarketProperty": "हम आपकी संपत्ति का प्रचार करेंगे",
+  "weMarketProperty": "हम आपकी प्रॉपर्टीका प्रचार करेंगे",
   "payAfterSale": "सफल बिक्री के बाद ही भुगतान करें",
 
   "oneTimeFee": "एक बार का शुल्क",
   "validUntilTenantFound": "किरायेदार मिलने तक मान्य",
   "tenantVerification": "किरायेदार सत्यापन सहायता",
 
-  "personalizedSearch": "व्यक्तिगत संपत्ति खोज",
-  "rentalAssistance": "किराये की संपत्ति सहायता",
+  "personalizedSearch": "व्यक्तिगत प्रॉपर्टीखोज",
+  "rentalAssistance": "किराये की प्रॉपर्टीसहायता",
   "moneyBack": "30 दिनों के भीतर पैसा वापसी*",
 
   "mostPopular": "सबसे लोकप्रिय"

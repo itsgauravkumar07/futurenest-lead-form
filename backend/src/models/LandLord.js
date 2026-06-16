@@ -22,6 +22,12 @@ const landlordSchema = new mongoose.Schema(
     state: String,
     pinCode: String,
 
+    propertyCategory: {
+      type: String,
+      required: true,
+      enum: ["Residential", "Commercial"],
+    },
+
     propertyType: {
       type: String,
       required: true,

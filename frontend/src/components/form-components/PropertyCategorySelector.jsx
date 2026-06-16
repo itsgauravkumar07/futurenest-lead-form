@@ -1,49 +1,29 @@
-const residentialTypes = [
-  "Flat",
-  "House",
-  "Villa",
-  "Builder Floor",
-  "Plot",
-];
-
-const commercialTypes = [
-  "Shop",
-  "Office",
-  "Showroom",
-  "Warehouse",
-  "Factory",
-  "Commercial Plot",
-];
-
-function PropertyTypeSelector({
-  category,
+function PropertyCategorySelector({
   value,
   onChange,
 }) {
-  const propertyTypes =
-    category === "Commercial"
-      ? commercialTypes
-      : residentialTypes;
-
-  if (!category) return null;
+  const categories = [
+    "Residential",
+    "Commercial",
+  ];
 
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-3">
-        Property Type
+        Property Category
         <span className="text-red-500 ml-1">*</span>
       </label>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {propertyTypes.map((type) => (
+      <div className="grid grid-cols-2 gap-3">
+        {categories.map((category) => (
           <button
-            key={type}
+            key={category}
             type="button"
             onClick={() =>
               onChange({
                 target: {
-                  name: "propertyType",
-                  value: type,
+                  name: "propertyCategory",
+                  value: category,
                 },
               })
             }
@@ -55,13 +35,13 @@ function PropertyTypeSelector({
               font-medium
               transition
               ${
-                value === type
+                value === category
                   ? "bg-green-100 border-green-500 text-green-700"
                   : "border-gray-300 hover:border-green-400"
               }
             `}
           >
-            {type}
+            {category}
           </button>
         ))}
       </div>
@@ -69,4 +49,4 @@ function PropertyTypeSelector({
   );
 }
 
-export default PropertyTypeSelector;
+export default PropertyCategorySelector;

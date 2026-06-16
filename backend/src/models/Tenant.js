@@ -22,6 +22,12 @@ const tenantSchema = new mongoose.Schema(
     state: String,
     pinCode: String,
 
+    propertyCategory: {
+      type: String,
+      required: true,
+      enum: ["Residential", "Commercial"],
+    },
+
     requirementType: {
       type: String,
       required: true,
@@ -30,6 +36,11 @@ const tenantSchema = new mongoose.Schema(
     preferredLocation: String,
 
     monthlyBudget: String,
+
+    occupation: {
+      type: String,
+      required: true,
+    },
 
     moveInDate: String,
 
