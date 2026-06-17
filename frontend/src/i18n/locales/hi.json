@@ -159,9 +159,11 @@
 
   "tenantFinderService": "किरायेदार खोज सेवा",
   "houseHuntingService": "हाउस हंटिंग सेवा",
+  "rentOnCommission": "कमीशन पर दें",
 
   "upTo100Leads": "100 तक खरीदार लीड्स",
   "upTo300Leads": "300 तक खरीदार लीड्स",
+  "upTo20TenantLeads": "20 तक सत्यापित किरायेदार लीड्स",
   "directBuyerContact": "खरीदारों की सीधी संपर्क जानकारी",
   "fasterExposure": "तेज़ प्रॉपर्टीप्रचार",
   "maximumVisibility": "अधिकतम प्रॉपर्टीदृश्यता",
@@ -169,9 +171,9 @@
   "noUpfrontPayment": "कोई अग्रिम भुगतान नहीं",
   "weMarketProperty": "हम आपकी प्रॉपर्टीका प्रचार करेंगे",
   "payAfterSale": "सफल बिक्री के बाद ही भुगतान करें",
+  "payAfterTenantFound": "किरायेदार मिलने के बाद ही भुगतान करें",
 
-  "oneTimeFee": "एक बार का शुल्क",
-  "validUntilTenantFound": "किरायेदार मिलने तक मान्य",
+  "tenantContactDetails": "किरायेदारों की सीधी संपर्क जानकारी",
   "tenantVerification": "किरायेदार सत्यापन सहायता",
 
   "personalizedSearch": "व्यक्तिगत प्रॉपर्टीखोज",

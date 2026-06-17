@@ -42,17 +42,31 @@ export const packages = {
   ],
 
   landlord: [
-    {
+{
       id: 1,
       title: "packages.tenantFinderService",
       price: 2000,
       features: [
-        "packages.oneTimeFee",
-        "packages.validUntilTenantFound",
+        "packages.upTo20TenantLeads",
+        "packages.tenantContactDetails",
         "packages.tenantVerification",
       ],
       buttonText: "packages.proceedToPayment",
+      popular: true,
       type: "payment",
+    },
+
+    {
+      id: 2,
+      title: "packages.rentOnCommission",
+      price: 0,
+      features: [
+        "packages.noUpfrontPayment",
+        "packages.weMarketProperty",
+        "packages.payAfterTenantFound",
+      ],
+      buttonText: "packages.contactUs",
+      type: "contact",
     },
   ],
 

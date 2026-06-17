@@ -187,9 +187,11 @@
 
   "tenantFinderService": "Tenant Finder Service",
   "houseHuntingService": "House Hunting Service",
+  "rentOnCommission": "Rent On Commission",
 
   "upTo100Leads": "Up to 100 buyer leads",
   "upTo300Leads": "Up to 300 buyer leads",
+  "upTo20TenantLeads": "Up to 20 verified tenant leads",
   "directBuyerContact": "Direct buyer contact details",
   "fasterExposure": "Faster property exposure",
   "maximumVisibility": "Maximum property visibility",
@@ -197,10 +199,10 @@
   "noUpfrontPayment": "No upfront payment",
   "weMarketProperty": "We market your property",
   "payAfterSale": "Pay only after successful sale",
+  "payAfterTenantFound": "Pay only after successful tenant placement",
 
-  "oneTimeFee": "One Time Fee",
-  "validUntilTenantFound": "Valid Until Tenant Found",
-  "tenantVerification": "Tenant Verification Support",
+  "tenantContactDetails": "Direct tenant contact details",
+  "tenantVerification": "Tenant verification support",
 
   "personalizedSearch": "Personalized Property Search",
   "rentalAssistance": "Rental Property Assistance",
