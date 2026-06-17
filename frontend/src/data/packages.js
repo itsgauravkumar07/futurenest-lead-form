@@ -3,7 +3,7 @@ export const packages = {
     {
       id: 1,
       title: "packages.seller100Leads",
-      price: 1999,
+      price: "₹ 1999",
       features: [
         "packages.upTo100Leads",
         "packages.directBuyerContact",
@@ -16,7 +16,7 @@ export const packages = {
     {
       id: 2,
       title: "packages.seller300Leads",
-      price: 4999,
+      price: "₹ 4999",
       features: [
         "packages.upTo300Leads",
         "packages.directBuyerContact",
@@ -30,7 +30,7 @@ export const packages = {
     {
       id: 3,
       title: "packages.sellOnCommission",
-      price: 0,
+      price: "Pay On Success",
       features: [
         "packages.noUpfrontPayment",
         "packages.weMarketProperty",
@@ -45,7 +45,7 @@ export const packages = {
 {
       id: 1,
       title: "packages.tenantFinderService",
-      price: 2000,
+      price: "₹ 2000",
       features: [
         "packages.upTo20TenantLeads",
         "packages.tenantContactDetails",
@@ -59,7 +59,7 @@ export const packages = {
     {
       id: 2,
       title: "packages.rentOnCommission",
-      price: 0,
+      price: "Pay On Success",
       features: [
         "packages.noUpfrontPayment",
         "packages.weMarketProperty",
@@ -74,7 +74,7 @@ export const packages = {
     {
       id: 1,
       title: "packages.houseHuntingService",
-      price: 1500,
+      price: "₹ 1500",
       features: [
         "packages.personalizedSearch",
         "packages.rentalAssistance",

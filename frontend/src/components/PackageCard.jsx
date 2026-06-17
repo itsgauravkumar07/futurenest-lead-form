@@ -27,7 +27,7 @@ function PackageCard({
       </h2>
 
       <div className="text-3xl font-bold mt-4 text-brand-secondary">
-        ₹{price}
+        {price}
       </div>
 
       <ul className="mt-4 space-y-2 text-gray-600">
