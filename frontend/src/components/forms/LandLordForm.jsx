@@ -107,6 +107,11 @@ function LandLordForm() {
     rules
   );
 
+  if (formData.images.length === 0) {
+  newErrors.images =
+    "Please upload at least one property image";
+}
+
   if (Object.keys(newErrors).length > 0) {
     setErrors(newErrors);
 
@@ -124,6 +129,13 @@ function LandLordForm() {
         behavior: "smooth",
         block: "center",
       });
+  } else if (newErrors.images) {
+  document
+    .getElementById("images-section")
+    ?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
   }
     return;
   }
@@ -309,6 +321,7 @@ function LandLordForm() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
             </div>
           </FormSection>
@@ -431,7 +444,6 @@ function LandLordForm() {
                   name="availableFrom"
                   value={formData.availableFrom}
                   onChange={handleChange}
-                  required
                   className="
                     w-full
                     border
@@ -482,7 +494,8 @@ function LandLordForm() {
 
     <div>
       <label className="block text-sm font-medium mb-2">
-        {t("landlord.propertyImages")}
+        {t("seller.propertyImages")}
+        <span className="text-red-500 ml-1">*</span>
       </label>
 
       <label
@@ -527,15 +540,20 @@ function LandLordForm() {
         multiple
         accept="image/*"
         className="hidden"
-        onChange={(e) =>
-          setFormData((prev) => ({
-            ...prev,
-            images: [
-              ...prev.images,
-              ...Array.from(e.target.files),
-            ],
-          }))
-        }
+        onChange={(e) => {
+            setErrors((prev) => ({
+              ...prev,
+              images: "",
+            }));
+
+            setFormData((prev) => ({
+              ...prev,
+              images: [
+                ...prev.images,
+                ...Array.from(e.target.files),
+              ],
+            }));
+          }}
       />
     </div>
 

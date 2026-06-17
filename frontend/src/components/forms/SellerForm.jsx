@@ -46,40 +46,48 @@ function SellerForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-      if (errors[name]) {
     setErrors((prev) => ({
       ...prev,
       [name]: "",
     }));
-  }
 
- setFormData((prev) => {
-    if (name === "propertyCategory") {
+    setFormData((prev) => {
+      // Property Category Change
+      if (name === "propertyCategory") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          propertyCategory: "",
+          propertyType: "",
+        }));
+
+        return {
+          ...prev,
+          propertyCategory: value,
+          propertyType: "",
+        };
+      }
+
+      // Mobile Number Change
+      if (name === "mobileNumber") {
+        return {
+          ...prev,
+          mobileNumber: value,
+
+          whatsappNumber:
+            prev.whatsappNumber === "" ||
+            prev.whatsappNumber === prev.mobileNumber
+              ? value
+              : prev.whatsappNumber,
+        };
+      }
+
+      // Default
       return {
         ...prev,
-        propertyCategory: value,
-        propertyType: "",
+        [name]: value,
       };
-    }
-
-    if (name === "mobileNumber") {
-      return {
-        ...prev,
-        mobileNumber: value,
-        whatsappNumber:
-          prev.whatsappNumber === "" ||
-          prev.whatsappNumber === prev.mobileNumber
-            ? value
-            : prev.whatsappNumber,
-      };
-    }
-
-    return {
-      ...prev,
-      [name]: value,
-    };
-  });
-}
+    });
+  };
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -103,6 +111,11 @@ function SellerForm() {
     rules
   );
 
+  if (formData.images.length === 0) {
+  newErrors.images =
+    "Please upload at least one property image";
+}
+
   if (Object.keys(newErrors).length > 0) {
     setErrors(newErrors);
 
@@ -120,9 +133,16 @@ function SellerForm() {
         behavior: "smooth",
         block: "center",
       });
+  } else if (newErrors.images) {
+  document
+    .getElementById("images-section")
+    ?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
   }
     return;
-  }
+};
 
   setLoading(true);
 
@@ -233,8 +253,7 @@ function SellerForm() {
     setLoading(false);
 
     alert("Failed to submit form");
-  }
-};
+  }};
 
   return (
     <div className="min-h-screen bg-slate-50 py-8 px-4">
@@ -297,6 +316,7 @@ function SellerForm() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
             </div>
           </FormSection>
@@ -452,71 +472,83 @@ function SellerForm() {
 
           {/* Image and video Upload Section */}
           <FormSection
-  title="seller.mediaTitle"
-  description="seller.mediaDesc"
->
-  <div className="space-y-6">
+            title="seller.mediaTitle"
+            description="seller.mediaDesc">
 
-    {/* Images Upload */}
+            <div className="space-y-6">
 
-    <div>
-      <label className="block text-sm font-medium mb-2">
-        {t("seller.propertyImages")}
-      </label>
+              {/* Images Upload */}
 
-      <label
-        htmlFor="images"
-        className="
-          block
-          w-full
-          border-2
-          border-dashed
-          border-gray-300
-          rounded-xl
-          p-6
-          text-center
-          cursor-pointer
-          hover:border-green-500
-          hover:bg-green-50
-          transition
-        "
-      >
-        <div className="space-y-2">
+              <div id="images-section">
+               <label className="block text-sm font-medium mb-2">
+                  {t("seller.propertyImages")}
+                  <span className="text-red-500 ml-1">*</span>
+                </label>
 
-          <p className="font-medium text-gray-700">
-            {t("seller.uploadImages")}
-          </p>
+                <label
+                  htmlFor="images"
+                  className="
+                    block
+                    w-full
+                    border-2
+                    border-dashed
+                    border-gray-300
+                    rounded-xl
+                    p-6
+                    text-center
+                    cursor-pointer
+                    hover:border-green-500
+                    hover:bg-green-50
+                    transition
+                  "
+                >
+                  <div className="space-y-2">
 
-          <p className="text-sm text-gray-500">
-            {t("seller.imageFormats")}
-          </p>
+                    <p className="font-medium text-gray-700">
+                      {t("seller.uploadImages")}
+                    </p>
 
-          {formData.images.length > 0 && (
-            <p className="text-green-600 font-medium">
-              {formData.images.length} {t("seller.imagesSelected")}
-            </p>
-          )}
+                    <p className="text-sm text-gray-500">
+                      {t("seller.imageFormats")}
+                    </p>
 
-        </div>
-      </label>
+                    {formData.images.length > 0 && (
+                      <p className="text-green-600 font-medium">
+                        {formData.images.length} {t("seller.imagesSelected")}
+                      </p>
+                    )}
 
-      <input
-        id="images"
-        type="file"
-        multiple
-        accept="image/*"
-        className="hidden"
-        onChange={(e) =>
-          setFormData((prev) => ({
-            ...prev,
-            images: [
-              ...prev.images,
-              ...Array.from(e.target.files),
-            ],
-          }))
-        }
-      />
-    </div>
+                  </div>
+                </label>
+
+                <input
+                  id="images"
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => {
+                    setErrors((prev) => ({
+                      ...prev,
+                      images: "",
+                    }));
+
+                    setFormData((prev) => ({
+                      ...prev,
+                      images: [
+                        ...prev.images,
+                        ...Array.from(e.target.files),
+                      ],
+                    }));
+                  }}
+                />
+              </div>
+
+              {errors.images && (
+                <p className="text-red-500 text-sm mt-2">
+                  {errors.images}
+                </p>
+              )}
 
     {/* Image Preview */}
 

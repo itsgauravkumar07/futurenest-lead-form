@@ -224,6 +224,7 @@ function TenantForm() {
               <div>
                 <label className="block text-sm font-medium mb-2">
                   {t("common.address")}
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
 
                 <textarea
@@ -347,7 +348,6 @@ function TenantForm() {
                   name="moveInDate"
                   value={formData.moveInDate}
                   onChange={handleChange}
-                  required
                   className="
                     w-full
                     border
