@@ -28,7 +28,7 @@ const tenantSchema = new mongoose.Schema(
       enum: ["Residential", "Commercial"],
     },
 
-    requirementType: {
+    propertyType: {
       type: String,
       required: true,
     },

@@ -45,6 +45,9 @@ const updateTenantPackage = async (req, res) => {
       data: tenant,
     });
   } catch (error) {
+
+    console.log("========== TENANT ERROR ==========");
+    console.log(error);
     res.status(500).json({
       success: false,
       message: error.message,

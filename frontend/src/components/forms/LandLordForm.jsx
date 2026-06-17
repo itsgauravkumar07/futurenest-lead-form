@@ -10,6 +10,7 @@ import PropertyTypeSelector from "../form-components/PropertyTypeSelector";
 import SubmitButton from "../form-components/SubmitButton";
 
 import PropertyCategorySelector from "../form-components/PropertyCategorySelector";
+import { validateForm } from "../../utils/validators"
 
 import BackButton from "../BackBtn"
 
@@ -17,6 +18,7 @@ function LandLordForm() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] =
   useState(false);
 
@@ -44,28 +46,89 @@ function LandLordForm() {
     video: null,
   });
 
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
+  const { name, value } = e.target;
 
-  if (name === "propertyCategory") {
-    setFormData({
-      ...formData,
-      propertyCategory: value,
-      propertyType: "",
-    });
-
-    return;
+    if (errors[name]) {
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   }
 
-  setFormData({
-    ...formData,
-    [name]: value,
+  setFormData((prev) => {
+    if (name === "propertyCategory") {
+      return {
+        ...prev,
+        propertyCategory: value,
+        propertyType: "",
+      };
+    }
+
+    if (name === "mobileNumber") {
+      return {
+        ...prev,
+        mobileNumber: value,
+        whatsappNumber:
+          prev.whatsappNumber === "" ||
+          prev.whatsappNumber === prev.mobileNumber
+            ? value
+            : prev.whatsappNumber,
+      };
+    }
+
+    return {
+      ...prev,
+      [name]: value,
+    };
   });
-  };
+};
 
   const handleSubmit = async (e) => {
   e.preventDefault();
-    setLoading(true);
+
+      const rules = {
+    propertyCategory: {
+      required: true,
+      message:
+        "Please select a property category",
+    },
+
+    propertyType: {
+      required: true,
+      message:
+        "Please select a property type",
+    },
+  };
+
+  const newErrors = validateForm(
+    formData,
+    rules
+  );
+
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+
+      if (newErrors.propertyCategory) {
+    document
+      .getElementById("property-category-section")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+  } else if (newErrors.propertyType) {
+    document
+      .getElementById("property-type-section")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+  }
+    return;
+  }
+
+  setLoading(true);
 
   try {
     const formDataToSend = new FormData();
@@ -310,16 +373,32 @@ function LandLordForm() {
           >
             <div className="space-y-4">
 
-             <PropertyCategorySelector
-              value={formData.propertyCategory}
-              onChange={handleChange}
-            />
+            <div id="property-category-section">
+              <PropertyCategorySelector
+                value={formData.propertyCategory}
+                onChange={handleChange}
+              />
 
-            <PropertyTypeSelector
-              category={formData.propertyCategory}
-              value={formData.propertyType}
-              onChange={handleChange}
-            />
+              {errors.propertyCategory && (
+                <p className="text-red-500 text-sm mt-2">
+                  {errors.propertyCategory}
+                </p>
+              )}
+            </div>
+
+            <div id="property-type-section">
+              <PropertyTypeSelector
+                category={formData.propertyCategory}
+                value={formData.propertyType}
+                onChange={handleChange}
+              />
+
+              {errors.propertyType && (
+                <p className="text-red-500 text-sm mt-2">
+                  {errors.propertyType}
+                </p>
+              )}
+            </div>
 
               <div className="grid md:grid-cols-2 gap-4">
 
