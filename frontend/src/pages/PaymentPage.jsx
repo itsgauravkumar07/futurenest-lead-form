@@ -80,7 +80,7 @@ const copyUPI = () => {
           </h2>
 
           <div className="text-4xl font-bold text-green-600 mt-4">
-            ₹{packageData.amount}
+            {packageData.amount}
           </div>
         </div>
 
