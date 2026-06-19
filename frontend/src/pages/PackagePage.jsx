@@ -55,7 +55,7 @@ switch (role) {
 
 // Update package in MongoDB
 await API.patch(endpoint, {
-  packageSelected: pkg.title,
+  packageSelected: t(pkg.title),
 });
 
 // Commission Package
@@ -82,7 +82,7 @@ if (pkg.type === "contact") {
 // Paid Package
 const packageData = {
   role,
-  packageName: pkg.title,
+  packageName: t(pkg.title),
   amount: pkg.price,
 };
 
