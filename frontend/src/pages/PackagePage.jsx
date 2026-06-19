@@ -1,5 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 
+import { useState } from "react";
+
 import PackageCard from "../components/PackageCard";
 import { packages } from "../data/packages";
 import API from "../services/api";
@@ -14,72 +16,97 @@ function PackagePage() {
 
   const currentPackages = packages[role] || [];
 
-  const handlePackageSelect = async (pkg) => {
-    try {
-      if (pkg.type === "contact") {
-        window.open(
-          "https://wa.me/919999999999",
-          "_blank"
-        );
-        return;
-      }
+const [loadingPackage, setLoadingPackage] = useState(null);
 
-      const leadId = localStorage.getItem(
-        `${role}LeadId`
-      );
+ const handlePackageSelect = async (pkg) => {
+   if (loadingPackage) return;
 
-      if (!leadId) {
-        alert("Lead not found");
-        return;
-      }
+setLoadingPackage(pkg.id);
+  
+try {
+const leadId = localStorage.getItem(
+`${role}LeadId`
+);
 
-      let endpoint = "";
+if (!leadId) {
+  alert("Lead not found");
+  return;
+}
 
-      switch (role) {
-        case "seller":
-          endpoint = `/sellers/${leadId}/package`;
-          break;
+let endpoint = "";
 
-        case "landlord":
-          endpoint = `/landlords/${leadId}/package`;
-          break;
+switch (role) {
+  case "seller":
+    endpoint = `/sellers/${leadId}/package`;
+    break;
 
-        case "tenant":
-          endpoint = `/tenants/${leadId}/package`;
-          break;
+  case "landlord":
+    endpoint = `/landlords/${leadId}/package`;
+    break;
 
-        default:
-          alert("Invalid role");
-          return;
-      }
+  case "tenant":
+    endpoint = `/tenants/${leadId}/package`;
+    break;
 
-      await API.patch(endpoint, {
-        packageSelected: pkg.title,
-      });
+  default:
+    alert("Invalid role");
+    return;
+}
 
-      const packageData = {
-        role,
-        packageName: pkg.title,
-        amount: pkg.price,
-      };
+// Update package in MongoDB
+await API.patch(endpoint, {
+  packageSelected: pkg.title,
+});
 
-      localStorage.setItem(
-        "selectedPackage",
-        JSON.stringify(packageData)
-      );
+// Commission Package
+if (pkg.type === "contact") {
+  const message = encodeURIComponent(
+    `Hi FutureNest, I am interested in the ${pkg.title} package.`
+  );
 
-      navigate("/payment", {
-        state: packageData,
-      });
-    } catch (error) {
-      console.error(error);
+  navigate("/success", {
+    state: {
+      role,
+      packageName: pkg.title,
+    },
+  });
 
-      alert(
-        error?.response?.data?.message ||
-          "Failed to update package"
-      );
-    }
-  };
+  setTimeout(() => {
+    window.location.href =
+      `https://wa.me/919999999999?text=${message}`;
+  }, 500);
+
+  return;
+}
+
+// Paid Package
+const packageData = {
+  role,
+  packageName: pkg.title,
+  amount: pkg.price,
+};
+
+localStorage.setItem(
+  "selectedPackage",
+  JSON.stringify(packageData)
+);
+
+navigate("/payment", {
+  state: packageData,
+});
+
+} catch (error) {
+console.error(error);
+
+alert(
+  error?.response?.data?.message ||
+    "Failed to update package"
+  );
+} finally{
+  setLoadingPackage(null);
+}
+};
+
 
   return (
     <div className="min-h-screen bg-slate-50 py-10 px-4">
@@ -118,8 +145,13 @@ function PackagePage() {
               title={pkg.title}
               price={pkg.price}
               features={pkg.features}
-              buttonText={pkg.buttonText}
+              buttonText={
+                loadingPackage === pkg.id
+                  ? "Processing..."
+                  : pkg.buttonText
+              }
               popular={pkg.popular}
+              disabled={loadingPackage === pkg.id}
               onClick={() =>
                 handlePackageSelect(pkg)
               }

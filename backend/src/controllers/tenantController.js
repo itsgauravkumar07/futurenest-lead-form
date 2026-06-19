@@ -1,5 +1,9 @@
 const Tenant = require("../models/Tenant");
 
+const sendLeadEmails = require(
+  "../utils/sendLeadEmail"
+);
+
 const createTenant = async (req, res) => {
   try {
     const tenant = await Tenant.create(req.body);
@@ -9,6 +13,7 @@ const createTenant = async (req, res) => {
       message: "Tenant lead created successfully",
       data: tenant,
     });
+    
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -38,6 +43,11 @@ const updateTenantPackage = async (req, res) => {
         message: "Tenant not found",
       });
     }
+
+    await sendLeadEmails(
+      tenant,
+      "Tenant"
+    )
 
     res.status(200).json({
       success: true,

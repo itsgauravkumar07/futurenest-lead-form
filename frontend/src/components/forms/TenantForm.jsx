@@ -18,6 +18,8 @@ function TenantForm() {
   const { t } = useTranslation();
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -88,7 +90,9 @@ function TenantForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-        const rules = {
+    setLoading(true);
+
+    const rules = {
     propertyCategory: {
       required: true,
       message:
@@ -142,6 +146,8 @@ function TenantForm() {
     } catch (error) {
       console.error(error);
       alert("Failed to submit form");
+    } finally {
+      setLoading(false);
     }
   };
 

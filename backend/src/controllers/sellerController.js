@@ -1,6 +1,10 @@
 const Seller = require("../models/Seller");
 const uploadToCloudinary = require("../utils/uploadToCloudinary");
 
+const sendLeadEmails = require(
+  "../utils/sendLeadEmail"
+);
+
 const createSeller = async (req, res) => {
   try {
     const imageUrls = [];
@@ -88,6 +92,11 @@ const updateSellerPackage = async (
         message: "Seller not found",
       });
     }
+
+      await sendLeadEmails(
+        seller,
+        "Seller"
+      );
 
     res.status(200).json({
       success: true,

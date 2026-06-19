@@ -9,6 +9,8 @@ const app = express();
 
 const uploadRoutes = require("./src/routes/uploadRoutes");
 
+const emailRoutes = require("./src/routes/emailRoutes");
+
 connectDB();
 
 app.use(cors());
@@ -18,6 +20,8 @@ app.use("/api/buyers", require("./src/routes/buyerRoutes"));
 app.use("/api/sellers", require("./src/routes/sellerRoutes"));
 app.use("/api/landlords", require("./src/routes/landlordRoutes"));
 app.use("/api/tenants", require("./src/routes/tenantRoutes"));
+
+app.use("/api/email", emailRoutes);
 
 //Upload routes
 app.use("/api", uploadRoutes);

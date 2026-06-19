@@ -1,6 +1,10 @@
 const Landlord = require("../models/LandLord");
 const uploadToCloudinary = require("../utils/uploadToCloudinary");
 
+const sendLeadEmails = require(
+  "../utils/sendLeadEmail"
+);
+
 const createLandlord = async (req, res) => {
   try {
     console.log("BODY RECEIVED:");
@@ -81,6 +85,11 @@ const updateLandlordPackage = async (
         message: "Landlord not found",
       });
     }
+
+    await sendLeadEmails(
+      landlord,
+      "Landlord"
+    );
 
     res.status(200).json({
       success: true,

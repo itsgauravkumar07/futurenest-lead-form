@@ -18,6 +18,7 @@ function BuyerForm() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     fullName: "",
@@ -79,6 +80,8 @@ const handleChange = (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     const rules = {
     propertyCategory: {
       required: true,
@@ -132,6 +135,8 @@ const handleChange = (e) => {
     } catch (error) {
       console.error(error);
       alert("Failed to submit form");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -308,7 +313,7 @@ const handleChange = (e) => {
           </FormSection>
 
           <div className="flex justify-center">
-            <SubmitButton text="common.submit" />
+            <SubmitButton text="common.submit" loading={loading}/>
           </div>
 
         </form>

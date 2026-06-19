@@ -6,6 +6,7 @@ function PackageCard({
   features,
   buttonText,
   popular,
+  disabled,
   onClick,
 }) {
   const { t } = useTranslation();
@@ -40,13 +41,15 @@ function PackageCard({
 
       <button
         onClick={onClick}
-        className={`mt-6 w-full py-3 rounded-lg text-white ${
-          buttonText === "packages.contactUs"
-            ? "bg-green-600"
-            : "bg-brand-secondary"
-        }`}
+        disabled={disabled}
+        className={`mt-6 w-full py-3 rounded-lg 
+          text-white transition ${ buttonText === "packages.contactUs" ? 
+            "bg-green-600" : "bg-brand-secondary" } 
+            ${ disabled ? "opacity-60 cursor-not-allowed" : "" }`}
       >
-        {t(buttonText)}
+        {buttonText === "Processing..."
+        ? "Processing..."
+        : t(buttonText)}
       </button>
     </div>
   );

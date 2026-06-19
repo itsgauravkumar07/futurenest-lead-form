@@ -1,8 +1,17 @@
 const Buyer = require("../models/Buyer");
 
+const sendLeadEmails = require(
+  "../utils/sendLeadEmail"
+);
+
 const createBuyer = async (req, res) => {
   try {
     const buyer = await Buyer.create(req.body);
+
+    await sendLeadEmails(
+      buyer,
+      "Buyer"
+    )
 
     res.status(201).json({
       success: true,
