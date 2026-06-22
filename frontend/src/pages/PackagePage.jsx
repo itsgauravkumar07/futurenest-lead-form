@@ -7,6 +7,7 @@ import { packages } from "../data/packages";
 import API from "../services/api";
 import { useTranslation } from "react-i18next";
 import BackButton from '../components/BackBtn'
+import { WHATSAPP_URL, WHATSAPP_NUMBER } from "../config/constants";
 
 function PackagePage() {
   const { role } = useParams();
@@ -73,7 +74,7 @@ if (pkg.type === "contact") {
 
   setTimeout(() => {
     window.location.href =
-      `https://wa.me/919999999999?text=${message}`;
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   }, 500);
 
   return;
@@ -184,7 +185,7 @@ alert(
             <button
               onClick={() =>
                 window.open(
-                  "https://wa.me/919999999999",
+                  WHATSAPP_URL,
                   "_blank"
                 )
               }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { WHATSAPP_URL } from "../config/constants";
 
 function SuccessPage() {
   const { t } = useTranslation();
@@ -21,7 +22,7 @@ function SuccessPage() {
         <div className="space-y-3">
 
           <a
-            href="https://wa.me/919999999999"
+            href= {WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
             className="block w-full bg-brand-primary hover:bg-brand-primary-hover text-white py-3 rounded-lg"
@@ -30,7 +31,7 @@ function SuccessPage() {
           </a>
 
           <a
-            href="tel:+919999999999"
+            href="tel:+918899169539"
             className="block w-full bg-brand-secondary hover:bg-brand-secondary-hover text-white py-3 rounded-lg"
           >
             {t("success.call")}
