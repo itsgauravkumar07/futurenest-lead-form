@@ -83,6 +83,7 @@ if (pkg.type === "contact") {
 // Paid Package
 const packageData = {
   role,
+  ...pkg,
   packageName: t(pkg.title),
   amount: pkg.price,
 };

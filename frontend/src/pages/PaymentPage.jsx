@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import QR from "../assets/qr-code.png";
 import { useTranslation } from "react-i18next";
 import BackButton from '../components/BackBtn'
+import { WHATSAPP_NUMBER } from "../config/constants";
 
 function PaymentPage() {
   const location = useLocation();
@@ -22,7 +23,7 @@ function PaymentPage() {
 
   if (!packageData) return null;
 
-  const whatsappNumber = "919999999999";
+
 
 const whatsappMessage = `
 ${t("payment.whatsappMessage")} ${t(packageData.packageName)}
@@ -34,7 +35,7 @@ ${t("payment.verificationLine")}
 
   const openWhatsApp = () => {
     window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
         whatsappMessage
       )}`,
       "_blank"
@@ -98,7 +99,7 @@ const copyUPI = () => {
 
             <div className="border border-gray-400 rounded-2xl p-4 bg-slate-50">
               <img
-                src={QR}
+                src={packageData.qrImage}
                 alt="Payment QR"
                 className="w-full max-w-xs mx-auto"
               />
