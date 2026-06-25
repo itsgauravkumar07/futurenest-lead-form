@@ -401,6 +401,7 @@ function LandLordForm() {
 
             <div id="property-type-section">
               <PropertyTypeSelector
+                role="landlord"
                 category={formData.propertyCategory}
                 value={formData.propertyType}
                 onChange={handleChange}

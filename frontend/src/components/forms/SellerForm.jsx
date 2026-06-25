@@ -406,6 +406,7 @@ function SellerForm() {
 
             <div id="property-type-section">
               <PropertyTypeSelector
+                role="seller"
                 category={formData.propertyCategory}
                 value={formData.propertyType}
                 onChange={handleChange}

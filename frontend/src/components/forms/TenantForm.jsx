@@ -303,6 +303,7 @@ function TenantForm() {
 
             <div id="property-type-section">
               <PropertyTypeSelector
+                role="tenant"
                 category={formData.propertyCategory}
                 value={formData.propertyType}
                 onChange={handleChange}

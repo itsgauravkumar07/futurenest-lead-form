@@ -1,17 +1,30 @@
-const residentialTypes = [
-  "Flat",
-  "House",
-  "Villa",
-  "Builder Floor",
-  "Plot",
-];
+const residentialTypes = {
+  seller: [
+    "Flat",
+    "House",
+    "Villa",
+    "Builder Floor",
+    "Plot",
+  ],
+
+  landlord: [
+    "Flat",
+    "House",
+    "Villa",
+  ],
+
+  tenant: [
+    "Flat",
+    "House",
+    "Villa",
+  ],
+};
 
 const commercialTypes = [
   "Shop",
   "Office",
   "Showroom",
   "Warehouse",
-  "Factory",
   "Commercial Plot",
 ];
 
@@ -19,11 +32,16 @@ function PropertyTypeSelector({
   category,
   value,
   onChange,
+  role = "seller",
 }) {
-  const propertyTypes =
-    category === "Commercial"
-      ? commercialTypes
-      : residentialTypes;
+  let propertyTypes = [];
+
+  if (category === "Residential") {
+    propertyTypes =
+      residentialTypes[role] || residentialTypes.seller;
+  } else {
+    propertyTypes = commercialTypes;
+  }
 
   if (!category) return null;
 
